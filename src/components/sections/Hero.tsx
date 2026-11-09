@@ -1,0 +1,40 @@
+export default function Hero() {
+  return (
+    <section className="sr-hero">
+      {/* Text content — floats above the image */}
+      <div className="sr-hero-content">
+        {/* Large display headline */}
+        <h1 className="sr-hero-headline">
+          Protective Coatings Built<br />
+          for Industrial Performance.
+        </h1>
+
+        {/* Short description */}
+        <p className="sr-hero-desc">
+          Anticorrosive, thermal, fireproofing and floor coating solutions
+          for industrial, commercial and infrastructure projects.
+        </p>
+
+        {/* CTA row */}
+        <div className="sr-hero-actions">
+          <a href="/services" className="sr-hero-btn-primary">
+            Our Services &nbsp;→
+          </a>
+          <a href="/contact" className="sr-hero-btn-secondary">
+            Get a Quote &nbsp;→
+          </a>
+        </div>
+      </div>
+
+      {/* Full-bleed image — fades into background at top */}
+      <div className="sr-hero-image-wrap" aria-hidden="true">
+        <div className="sr-hero-image-fade" />
+        <img
+          src="/images/forte/forte-technologies-hero-img.png"
+          alt=""
+          className="sr-hero-image"
+        />
+      </div>
+    </section>
+  );
+}

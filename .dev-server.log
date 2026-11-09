@@ -1,0 +1,761 @@
+
+> app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.8:3000
+- Environments: .env.local
+✓ Ready in 782ms
+✓ Running next.config.ts took 58ms
+
+○ Compiling / ...
+ GET / 200 in 826ms (next.js: 353ms, application-code: 473ms)
+ GET / 200 in 197ms (next.js: 7ms, application-code: 190ms)
+ GET /admin/login 200 in 2.6s (next.js: 1956ms, proxy.ts: 346ms, application-code: 341ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+ GET /admin/login 200 in 152ms (next.js: 71ms, proxy.ts: 9ms, application-code: 72ms)
+ GET /services 200 in 242ms (next.js: 32ms, application-code: 209ms)
+ GET /contact 200 in 205ms (next.js: 21ms, application-code: 184ms)
+ GET /about 200 in 191ms (next.js: 37ms, application-code: 155ms)
+[browser] Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+ GET /admin/login 200 in 90ms (next.js: 32ms, proxy.ts: 5ms, application-code: 53ms)
+ GET /services 200 in 85ms (next.js: 6ms, application-code: 79ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=700&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=700&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=700&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=700&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=700&q=80 404
+ GET /contact 200 in 34ms (next.js: 3ms, application-code: 31ms)
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (0.5s elapsed so far; last modified: "\\\\?\\D:\\forte-website\\node_modules\\tailwind-merge\\dist\\es5").
+✓ Compiled in 315ms
+✓ Compiled in 137ms
+✓ Compiled in 167ms
+✓ Compiled in 2.9s
+✓ Compiled in 411ms
+✓ Compiled in 159ms
+✓ Compiled in 128ms
+✓ Compiled in 283ms
+✓ Compiled in 160ms
+✓ Compiled in 148ms
+✓ Compiled in 191ms
+✓ Compiled in 180ms
+ GET /contact 200 in 564ms (next.js: 28ms, application-code: 536ms)
+ GET /admin/login 200 in 752ms (next.js: 214ms, proxy.ts: 207ms, application-code: 331ms)
+ GET / 200 in 126ms (next.js: 4ms, application-code: 122ms)
+ GET / 200 in 46ms (next.js: 2ms, application-code: 43ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+ GET / 200 in 122ms (next.js: 3ms, application-code: 119ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+ GET /about 200 in 81ms (next.js: 12ms, application-code: 68ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET / 200 in 36ms (next.js: 3ms, application-code: 33ms)
+ GET /about 200 in 49ms (next.js: 1.6ms, application-code: 48ms)
+ GET / 200 in 29ms (next.js: 2.0ms, application-code: 27ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+ GET / 200 in 332ms (next.js: 16ms, application-code: 317ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+✓ Compiled in 721ms
+ GET /admin/login 200 in 209ms (next.js: 53ms, proxy.ts: 13ms, application-code: 143ms)
+ GET / 200 in 65ms (next.js: 9ms, application-code: 56ms)
+✓ Compiled in 219ms
+✓ Compiled in 61ms
+✓ Compiled in 48ms
+ GET / 200 in 169ms (next.js: 6ms, application-code: 163ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1571677246347-5040d8efb6d1?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1566843973020-93e8c4bced23?w=400&q=75 404
+[browser] Image with src "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+✓ Compiled in 853ms
+ GET / 200 in 88ms (next.js: 18ms, application-code: 70ms)
+✓ Compiled in 63ms
+ GET / 200 in 42ms (next.js: 4ms, application-code: 38ms)
+✓ Compiled in 283ms
+✓ Compiled in 73ms
+✓ Compiled in 154ms
+✓ Compiled in 47ms
+✓ Compiled in 52ms
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+✓ Compiled in 124ms
+✓ Compiled in 197ms
+ GET / 200 in 108ms (next.js: 8ms, application-code: 100ms)
+ GET / 200 in 159ms (next.js: 6ms, application-code: 153ms)
+ GET / 200 in 155ms (next.js: 5ms, application-code: 149ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1590631000012-20a5c4b42285?w=400&q=75 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&q=75 404
+✓ Compiled in 126ms
+ GET / 200 in 108ms (next.js: 16ms, application-code: 92ms)
+✓ Compiled in 141ms
+ GET / 200 in 125ms (next.js: 4ms, application-code: 121ms)
+✓ Compiled in 349ms
+✓ Compiled in 1464ms
+✓ Compiled in 150ms
+✓ Compiled in 279ms
+ GET / 200 in 444ms (next.js: 64ms, application-code: 381ms)
+ GET / 200 in 94ms (next.js: 1.3ms, application-code: 92ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1530349906278-47d5e48a5ca5?w=700&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1530349906278-47d5e48a5ca5?w=700&q=80 404
+ GET / 200 in 301ms (next.js: 9ms, application-code: 292ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1530349906278-47d5e48a5ca5?w=700&q=80 404
+✓ Compiled in 292ms
+✓ Compiled in 168ms
+✓ Compiled in 177ms
+ GET /admin/login 200 in 429ms (next.js: 218ms, proxy.ts: 70ms, application-code: 141ms)
+[browser] Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+ GET / 200 in 219ms (next.js: 13ms, application-code: 205ms)
+✓ Compiled in 308ms
+✓ Compiled in 69ms
+✓ Compiled in 881ms
+ GET /admin/login 200 in 339ms (next.js: 176ms, proxy.ts: 95ms, application-code: 67ms)
+ GET / 200 in 173ms (next.js: 19ms, application-code: 154ms)
+✓ Compiled in 321ms
+✓ Compiled in 84ms
+ GET /admin/login 200 in 254ms (next.js: 178ms, proxy.ts: 22ms, application-code: 54ms)
+ GET / 200 in 164ms (next.js: 17ms, application-code: 146ms)
+✓ Compiled in 81ms
+ GET /admin/login 200 in 209ms (next.js: 63ms, proxy.ts: 20ms, application-code: 126ms)
+ GET / 200 in 188ms (next.js: 11ms, application-code: 177ms)
+✓ Compiled in 73ms
+ GET /admin/login 200 in 138ms (next.js: 69ms, proxy.ts: 13ms, application-code: 57ms)
+ GET / 200 in 121ms (next.js: 10ms, application-code: 111ms)
+✓ Compiled in 91ms
+ GET /admin/login 200 in 170ms (next.js: 89ms, proxy.ts: 16ms, application-code: 65ms)
+ GET / 200 in 155ms (next.js: 16ms, application-code: 139ms)
+✓ Compiled in 113ms
+ GET /admin/login 200 in 186ms (next.js: 95ms, proxy.ts: 24ms, application-code: 68ms)
+ GET / 200 in 149ms (next.js: 11ms, application-code: 139ms)
+✓ Compiled in 139ms
+ GET /admin/login 200 in 179ms (next.js: 122ms, proxy.ts: 14ms, application-code: 43ms)
+ GET / 200 in 139ms (next.js: 17ms, application-code: 122ms)
+✓ Compiled in 349ms
+ GET /admin/login 200 in 231ms (next.js: 163ms, proxy.ts: 17ms, application-code: 51ms)
+ GET / 200 in 145ms (next.js: 11ms, application-code: 134ms)
+✓ Compiled in 67ms
+ GET /admin/login 200 in 248ms (next.js: 161ms, proxy.ts: 27ms, application-code: 59ms)
+ GET / 200 in 228ms (next.js: 17ms, application-code: 211ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+ GET / 200 in 430ms (next.js: 8ms, application-code: 422ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <RootLayout>
+                        <html
++                         className="no-js"
+-                         className="no-js skrollr skrollr-desktop"
+                          lang="en"
+                        >
+                          <head>
+                          ...
+                            <HomePage>
+                              ...
+                                <LinkComponent className="navbar-brand" href="/">
+                                  <a className="navbar-brand" ref={function} onClick={function onClick} ...>
+                                    <img
+                                      src="/logo.png"
+                                      alt="Forte Technologies"
+                                      className="default-logo"
+                                      style={{maxHeight:"60px"}}
+-                                     data-no-retina=""
+                                    >
+                                    <img
+                                      src="/logo.png"
+                                      alt="Forte Technologies"
+                                      className="alt-logo"
+                                      style={{maxHeight:"60px"}}
+-                                     data-no-retina=""
+                                    >
+                                    <img
+                                      src="/logo.png"
+                                      alt="Forte Technologies"
+                                      className="mobile-logo"
+                                      style={{maxHeight:"50px"}}
+-                                     data-no-retina=""
+                                    >
+                              <main>
+                                <Hero>
+                                  <section className="p-0 bg-dar...">
+                                    <div
++                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+-                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+                                      data-slider-options={"{ \"slidesPerView\": 1, \"loop\": true, \"pagination\": {..."}
+                                      data-number-pagination="1"
+                                      data-anime-text={"{ \"translateY\": [50,0], \"opacity\": [0,1], \"easing\": \"e..."}
+-                                     style={{margin-top:"inherit",height:"748px"}}
+                                    >
+                                      <div
+                                        className="swiper-wrapper"
+-                                       id="swiper-wrapper-4a6fc6a10954b5643"
+-                                       aria-live="off"
+                                      >
+                                        <div
++                                         className="swiper-slide"
+-                                         className="swiper-slide swiper-slide-visible swiper-slide-fully-visible swip..."
+-                                         style={{width:"1521px",opacity:"1",transform:"translate3..."}}
+-                                         role="group"
+-                                         aria-label="1 / 3"
+-                                         data-swiper-slide-index="0"
+                                        >
+                                          <div
+                                            className="position-absolute left-0px top-0px w-100 h-100 cover-background"
+                                            style={{
++                                             backgroundImage: "url('/crafto/images/demo-spa-salon-slider-01.jpg')"
+-                                             background-image: "url(\"/crafto/images/demo-spa-salon-slider-01.jpg\")"
+-                                             opacity: "1"
+-                                             transition-behavior: "normal"
+-                                             transition-duration: "0s"
+-                                             transition-timing-function: "ease"
+-                                             transition-delay: "0s"
+-                                             transition-property: "none"
+-                                             transform: "translateY(0px) scale(1.0054)"
+                                            }}
+                                            data-anime={"{ \"translateY\": [0,0], \"opacity\": [1,1], \"scale\": [1,1..."}
+-                                           staggervalue="31.5847"
+-                                           easing="easeOutQuad"
+                                          >
+                                          <div>
+                                          <div className="container ...">
+                                            <div className="row align-...">
+                                              <div className="col-xl-8 c...">
+                                                <span
+                                                  className="fs-15 d-block mb-15px ls-4px text-uppercase"
+                                                  data-anime={"{ \"opacity\": [0,1], \"easing\": \"easeOutCubic\", \"..."}
+-                                                 style={{opacity:"0.0317",transition-behavior:"normal",transition-duration:"0s", ...}}
+-                                                 easing="easeOutCubic"
+                                                >
++                                                 Industrial Coating Specialists
+                                                <div
++                                                 className="alt-font fs-80 sm-fs-60 xs-fs-50 mb-40px w-80 lg-w-100 md..."
+-                                                 className="alt-font fs-80 sm-fs-60 xs-fs-50 mb-40px w-80 lg-w-100 md..."
+                                                  data-fancy-text={"{ \"opacity\": [0,1], \"translateY\": [50,0], \"s..."}
+                                                >
+-                                                 <span
+-                                                   className="anime-text words chars splitting"
+-                                                   data-splitting="true"
+-                                                   style={{--word-total:"3",--char-total:"24"}}
+-                                                 >
+                                                ...
+                                        ...
+                                      ...
+                                ...
+                              ...
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at Hero (src\components\sections\Hero.tsx:21:19)
+    at HomePage (src\app\page.tsx:15:9)
+  19 |                     Industrial Coating Specialists
+  20 |                   </span>
+> 21 |                   <div
+     |                   ^
+  22 |                     className="alt-font fs-80 sm-fs-60 xs-fs-50 mb-40px w-80 lg-w-100 md-w-90 sm-w-100 mx-auto sm-mb-35px anime-text ls-minus-2px"
+  23 |                     data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "string": ["Protect. Restore. Perform."], "duration": 500, "delay": 200, "speed": 10, "easing": "easeOutQuad" }'
+  24 |                   ></div>
+ GET /marketplace.json 404 in 2.1s (next.js: 1846ms, application-code: 209ms)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+ GET / 200 in 127ms (next.js: 3ms, application-code: 124ms)
+ GET /marketplace.json 404 in 235ms (next.js: 77ms, application-code: 158ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <RootLayout>
+                        <html
++                         className="no-js"
+-                         className="no-js skrollr skrollr-desktop"
+                          lang="en"
+                        >
+                          <head>
+                          ...
+                            <HomePage>
+                              <Header>
+                              <main>
+                                <Hero>
+                                  <section className="p-0 bg-dar...">
+                                    <div
++                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+-                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+                                      data-slider-options={"{ \"slidesPerView\": 1, \"loop\": true, \"pagination\": {..."}
+                                      data-number-pagination="1"
+                                      data-anime-text={"{ \"translateY\": [50,0], \"opacity\": [0,1], \"easing\": \"e..."}
+                                    >
+                                      <div
+                                        className="swiper-wrapper"
+-                                       id="swiper-wrapper-93e28b5e1874d8f9"
+-                                       aria-live="off"
+                                      >
+                                        <div
++                                         className="swiper-slide"
+-                                         className="swiper-slide swiper-slide-visible swiper-slide-fully-visible swip..."
+-                                         style={{width:"1521px",opacity:"1",transform:"translate3..."}}
+-                                         role="group"
+-                                         aria-label="1 / 3"
+-                                         data-swiper-slide-index="0"
+                                        >
+                                          <div
+                                            className="position-absolute left-0px top-0px w-100 h-100 cover-background"
+                                            style={{
++                                             backgroundImage: "url('/crafto/images/demo-spa-salon-slider-01.jpg')"
+-                                             background-image: "url(\"/crafto/images/demo-spa-salon-slider-01.jpg\")"
+-                                             opacity: "1"
+-                                             transition-behavior: "normal"
+-                                             transition-duration: "0s"
+-                                             transition-timing-function: "ease"
+-                                             transition-delay: "0s"
+-                                             transition-property: "none"
+-                                             transform: "translateY(0px) scale(1.0017)"
+                                            }}
+                                            data-anime={"{ \"translateY\": [0,0], \"opacity\": [1,1], \"scale\": [1,1..."}
+-                                           staggervalue="10.9056"
+-                                           easing="easeOutQuad"
+                                          >
+                                          <div>
+                                          <div className="container ...">
+                                            <div className="row align-...">
+                                              <div className="col-xl-8 c...">
+                                                <span
+                                                  className="fs-15 d-block mb-15px ls-4px text-uppercase"
+                                                  data-anime={"{ \"opacity\": [0,1], \"easing\": \"easeOutCubic\", \"..."}
+-                                                 style={{opacity:"0",transition-behavior:"normal",transition-duration:"0s", ...}}
+                                                >
++                                                 Industrial Coating Specialists
+                                                <div className="alt-font f..." data-fancy-text={"{ \"opac..."}>
+-                                                 <span
+-                                                   className="anime-text words chars splitting"
+-                                                   data-splitting="true"
+-                                                   style={{--word-total:"3",--char-total:"24"}}
+-                                                 >
+                                                ...
+                                        ...
+                                      ...
+                                ...
+                              ...
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at Hero (src\components\sections\Hero.tsx:21:19)
+    at HomePage (src\app\page.tsx:15:9)
+  19 |                     Industrial Coating Specialists
+  20 |                   </span>
+> 21 |                   <div
+     |                   ^
+  22 |                     className="alt-font fs-80 sm-fs-60 xs-fs-50 mb-40px w-80 lg-w-100 md-w-90 sm-w-100 mx-auto sm-mb-35px anime-text ls-minus-2px"
+  23 |                     data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "string": ["Protect. Restore. Perform."], "duration": 500, "delay": 200, "speed": 10, "easing": "easeOutQuad" }'
+  24 |                   ></div>
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript), which was deleted by an HMR update
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update (<anonymous>)
+[browser] Unexpected import of module [project]/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript) from module [project]/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript), which was deleted by an HMR update
+ GET /admin/login 200 in 218ms (next.js: 40ms, proxy.ts: 26ms, application-code: 153ms)
+ GET /marketplace.json 404 in 182ms (next.js: 78ms, application-code: 103ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <RootLayout>
+                        <html
++                         className="no-js"
+-                         className="no-js skrollr skrollr-desktop"
+                          lang="en"
+                        >
+                          <head>
+                          ...
+                            <div className="text-cente...">
+                              <img
+                                alt="Forte Technologies"
+                                fetchPriority={undefined}
+                                loading="lazy"
+                                width={140}
+                                height={56}
+                                decoding="async"
+                                data-nimg="1"
+                                className="h-14 w-auto object-contain mx-auto mb-4"
+                                style={{color:"transparent"}}
+                                sizes={undefined}
+                                srcSet={"/_next/image?url=%2Flogo.png&w=256&q=75 1x, /_next/image?url=%2Flogo.png&w=3..."}
+                                src={"/_next/image?url=%2Flogo.png&w=384&q=75"}
+                                ref={function}
+                                onLoad={function onLoad}
+                                onError={function onError}
+-                               data-no-retina=""
+                              >
+                              ...
+                  ...
+ 
+ GET / 200 in 147ms (next.js: 4ms, application-code: 142ms)
+ GET /marketplace.json 404 in 136ms (next.js: 30ms, application-code: 105ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <RootLayout>
+                        <html
++                         className="no-js"
+-                         className="no-js skrollr skrollr-desktop"
+                          lang="en"
+                        >
+                          <head>
+                          ...
+                            <HomePage>
+                              <Header>
+                              <main>
+                                <Hero>
+                                  <section className="p-0 bg-dar...">
+                                    <div
++                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+-                                     className="swiper full-screen ipad-top-space-margin md-h-600px sm-h-500px swiper..."
+                                      data-slider-options={"{ \"slidesPerView\": 1, \"loop\": true, \"pagination\": {..."}
+                                      data-number-pagination="1"
+                                      data-anime-text={"{ \"translateY\": [50,0], \"opacity\": [0,1], \"easing\": \"e..."}
+                                    >
+                                      <div
+                                        className="swiper-wrapper"
+-                                       id="swiper-wrapper-877bc5e3594cd151"
+-                                       aria-live="off"
+                                      >
+                                        <div
++                                         className="swiper-slide"
+-                                         className="swiper-slide swiper-slide-visible swiper-slide-fully-visible swip..."
+-                                         style={{width:"1521px",opacity:"1",transform:"translate3..."}}
+-                                         role="group"
+-                                         aria-label="1 / 3"
+-                                         data-swiper-slide-index="0"
+                                        >
+                                          <div
+                                            className="position-absolute left-0px top-0px w-100 h-100 cover-background"
+                                            style={{
++                                             backgroundImage: "url('/crafto/images/demo-spa-salon-slider-01.jpg')"
+-                                             background-image: "url(\"/crafto/images/demo-spa-salon-slider-01.jpg\")"
+-                                             opacity: "1"
+-                                             transition-behavior: "normal"
+-                                             transition-duration: "0s"
+-                                             transition-timing-function: "ease"
+-                                             transition-delay: "0s"
+-                                             transition-property: "none"
+-                                             transform: "translateY(0px) scale(1.0012)"
+                                            }}
+                                            data-anime={"{ \"translateY\": [0,0], \"opacity\": [1,1], \"scale\": [1,1..."}
+-                                           staggervalue="10.4935"
+-                                           easing="easeOutQuad"
+                                          >
+                                          <div>
+                                          <div className="container ...">
+                                            <div className="row align-...">
+                                              <div className="col-xl-8 c...">
+                                                <span
+                                                  className="fs-15 d-block mb-15px ls-4px text-uppercase"
+                                                  data-anime={"{ \"opacity\": [0,1], \"easing\": \"easeOutCubic\", \"..."}
+-                                                 style={{opacity:"0",transition-behavior:"normal",transition-duration:"0s", ...}}
+                                                >
++                                                 Industrial Coating Specialists
+                                                <div className="alt-font f..." data-fancy-text={"{ \"opac..."}>
+-                                                 <span
+-                                                   className="anime-text words chars splitting"
+-                                                   data-splitting="true"
+-                                                   style={{--word-total:"3",--char-total:"24"}}
+-                                                 >
+                                                ...
+                                        ...
+                                      ...
+                                ...
+                              ...
+                  ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at Hero (src\components\sections\Hero.tsx:21:19)
+    at HomePage (src\app\page.tsx:15:9)
+  19 |                     Industrial Coating Specialists
+  20 |                   </span>
+> 21 |                   <div
+     |                   ^
+  22 |                     className="alt-font fs-80 sm-fs-60 xs-fs-50 mb-40px w-80 lg-w-100 md-w-90 sm-w-100 mx-auto sm-mb-35px anime-text ls-minus-2px"
+  23 |                     data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "string": ["Protect. Restore. Perform."], "duration": 500, "delay": 200, "speed": 10, "easing": "easeOutQuad" }'
+  24 |                   ></div>
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+✓ Compiled in 206ms
+ GET / 200 in 221ms (next.js: 12ms, application-code: 209ms)
+ GET / 200 in 231ms (next.js: 12ms, application-code: 220ms)
+ GET /marketplace.json 404 in 232ms (next.js: 56ms, application-code: 176ms)
+✓ Compiled in 321ms
+ GET / 200 in 385ms (next.js: 49ms, application-code: 336ms)
+ GET /about 200 in 385ms (next.js: 124ms, application-code: 261ms)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+✓ Compiled in 661ms
+ GET /about 200 in 349ms (next.js: 48ms, application-code: 302ms)
+✓ Compiled in 267ms
+ GET /about 200 in 236ms (next.js: 7ms, application-code: 229ms)
+✓ Compiled in 150ms
+ GET /about 200 in 98ms (next.js: 5ms, application-code: 93ms)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+[browser] No target found. Make sure the element you're trying to animate is accessible before creating your animation. (http://localhost:3000/crafto/js/vendors.min.js:7:28159)
+ GET /about 200 in 1224ms (next.js: 23ms, application-code: 1201ms)
+ GET /about 200 in 182ms (next.js: 14ms, application-code: 168ms)
+ GET /marketplace.json 404 in 136ms (next.js: 58ms, application-code: 78ms)

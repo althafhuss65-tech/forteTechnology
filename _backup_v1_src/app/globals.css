@@ -1,0 +1,130 @@
+/* Crafto CSS is loaded via <link> in layout.tsx */
+/* Tailwind removed to avoid conflicts with Bootstrap/Crafto */
+
+/* ─── Hover micro-animations ───────────────────────────────────── */
+
+/* Card lift: project cards, service cards */
+.services-box-style-02 {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.services-box-style-02:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo zoom inside cover-background containers */
+.services-box-img .cover-background,
+.swiper-slide .cover-background {
+  transition: transform 0.5s ease;
+}
+.services-box-style-02:hover .services-box-img .cover-background {
+  transform: scale(1.03);
+}
+
+/* Feature box subtle lift on hover */
+.icon-with-text-style-03 .feature-box {
+  transition: transform 0.25s ease;
+}
+.icon-with-text-style-03:hover .feature-box {
+  transform: translateY(-2px);
+}
+
+/* Button press feedback (already handled by Crafto but reinforce) */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ─── ProcessBand brand names ───────────────────────────────────── */
+.forte-brand-name {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: clamp(14px, 2vw, 18px);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.forte-brand-name:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ─── ProcessBand connector lines ───────────────────────────────── */
+@media (min-width: 992px) {
+  .process-step-connector {
+    display: block !important;
+  }
+}
+
+/* ─── ProcessBand redesign ─────────────────────────────────────── */
+/* Hallmark · v2.0.0 · redesign:full · ProcessBand
+   critique: centred template, ~50% empty headspace, icons duplicate numbers, brand row disconnected */
+
+.pb-num {
+  font-family: var(--alt-font);
+  font-size: clamp(60px, 6vw, 88px);
+  font-weight: 700;
+  color: rgba(21, 101, 192, 0.12);
+  line-height: 1;
+  letter-spacing: -5px;
+  display: block;
+  margin-bottom: 20px;
+}
+.pb-accent {
+  width: 28px;
+  height: 2px;
+  background-color: #1565C0;
+  margin-bottom: 20px;
+}
+.pb-step-title {
+  font-family: var(--alt-font);
+  font-size: 17px;
+  font-weight: 600;
+  color: #1C1C1E;
+  letter-spacing: -0.3px;
+  display: block;
+  margin-bottom: 10px;
+}
+.pb-step-desc {
+  font-size: 14px;
+  line-height: 1.72;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+.pb-step-col {
+  padding: 0 32px;
+}
+.pb-step-col:first-child {
+  padding-left: 0;
+}
+@media (min-width: 992px) {
+  .pb-step-col:not(:first-child) {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+@media (max-width: 575px) {
+  .pb-step-col { padding: 0 0 32px; }
+  .pb-num { letter-spacing: -3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* ProcessBand uses Crafto data-anime; no extra motion added */
+}
+
+/* ─── Logo: remove any background box ──────────────────────────── */
+.navbar-brand,
+.navbar-brand img,
+.menu-logo,
+.menu-logo a {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* ─── Smooth scroll ─────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Focus visible (accessibility) ────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #1565C0;
+  outline-offset: 3px;
+}

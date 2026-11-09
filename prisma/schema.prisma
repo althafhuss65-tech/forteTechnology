@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("admin_users")
+}
+
+model SiteSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  label     String
+  type      String   @default("text") // text | textarea | image | email | url
+  updatedAt DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model Page {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  metaTitle   String
+  metaDesc    String        @db.Text
+  ogImageUrl  String?
+  isIndexable Boolean       @default(true)
+  updatedAt   DateTime      @updatedAt
+  sections    PageSection[]
+
+  @@map("pages")
+}
+
+model PageSection {
+  id          String  @id @default(cuid())
+  pageSlug    String
+  sectionType String  // hero | about | competencies | floor-coatings | projects | why-us | safety | contact-cta
+  orderIndex  Int
+  isVisible   Boolean @default(true)
+  content     Json    // flexible JSON per section type
+  updatedAt   DateTime @updatedAt
+  page        Page    @relation(fields: [pageSlug], references: [slug], onDelete: Cascade)
+
+  @@map("page_sections")
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  shortDesc   String   @db.Text
+  longDesc    String?  @db.Text
+  imageUrl    String?
+  altText     String?
+  category    String   // protective | flooring
+  orderIndex  Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("services")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  imageUrl    String?
+  altText     String?
+  category    String?
+  orderIndex  Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("projects")
+}
+
+model Enquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@map("enquiries")
+}
