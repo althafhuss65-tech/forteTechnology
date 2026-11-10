@@ -49,9 +49,9 @@ export default function ServicesOverview() {
                   {SERVICES.map(({ Icon, title, desc, img, num }) => (
                     <div key={num} className="swiper-slide">
                       <div className="row g-0 services-box-style-02 border-radius-6px overflow-hidden">
-                        <div className="col-sm-6 position-relative bg-very-light-gray p-10 xxl-p-6 xs-p-10">
+                        <div className="col-sm-6 position-relative p-10 xxl-p-6 xs-p-10" style={{ backgroundColor: "#E8EDE3" }}>
                           <div className="services-box-icon mb-65px position-relative z-index-9 lg-mb-30px">
-                            <Icon size={60} color="var(--base-color)" strokeWidth={1.5} />
+                            <Icon size={60} color="#879477" strokeWidth={1.5} />
                           </div>
                           <div className="services-box-content last-paragraph-no-margin position-relative z-index-9">
                             <span className="d-inline-block alt-font text-dark-gray fs-24 mb-5px">{title}</span>

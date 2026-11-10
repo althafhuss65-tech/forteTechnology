@@ -37,7 +37,7 @@ interface Props {
   className?: string;
 }
 
-export function Icon({ name, size = 48, color = "#1565C0", className = "" }: Props) {
+export function Icon({ name, size = 48, color = "#879477", className = "" }: Props) {
   const C = MAP[name];
   if (!C) return null;
   return <C size={size} color={color} strokeWidth={1.5} className={className} />;

@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 export default function Hero() {
   return (
     <section className="sr-hero">
@@ -18,10 +20,10 @@ export default function Hero() {
         {/* CTA row */}
         <div className="sr-hero-actions">
           <a href="/services" className="sr-hero-btn-primary">
-            Our Services &nbsp;→
+            Our Services <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
           </a>
           <a href="/contact" className="sr-hero-btn-secondary">
-            Get a Quote &nbsp;→
+            Get a Quote <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
           </a>
         </div>
       </div>

@@ -25,7 +25,7 @@ const BRANDS = ["AkzoNobel", "International", "GEM Paints", "Jotun", "Berger"];
 
 export default function ProcessBand() {
   return (
-    <section className="background-repeat border-top border-color-light-gray" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
+    <section className="border-top border-color-light-gray" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container">
 
         {/* Heading */}

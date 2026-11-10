@@ -106,7 +106,7 @@ export default function AboutPage() {
               <div className="col icon-with-text-style-03 border-end border-color-light-gray md-border-end-0 md-mb-30px">
                 <div className="feature-box ps-8 pe-8 xl-ps-5 xl-pe-5">
                   <div className="feature-box-icon mb-20px">
-                    <Eye size={52} color="#1565C0" strokeWidth={1.5} />
+                    <Eye size={52} color="#879477" strokeWidth={1.5} />
                   </div>
                   <div className="feature-box-content last-paragraph-no-margin">
                     <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">Our Vision</span>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <div className="col icon-with-text-style-03">
                 <div className="feature-box ps-8 pe-8 xl-ps-5 xl-pe-5">
                   <div className="feature-box-icon mb-20px">
-                    <Target size={52} color="#1565C0" strokeWidth={1.5} />
+                    <Target size={52} color="#879477" strokeWidth={1.5} />
                   </div>
                   <div className="feature-box-content last-paragraph-no-margin">
                     <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">Our Mission</span>
@@ -130,7 +130,7 @@ export default function AboutPage() {
         </section>
 
         {/* Quality commitment */}
-        <section className="background-repeat border-top border-color-light-gray" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
+        <section className="background-repeat border-top forte-quality-section">
           <div className="container">
             <div className="row justify-content-center mb-6 md-mb-8">
               <div className="col-xl-7 col-lg-8 col-md-10 text-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -157,7 +157,7 @@ export default function AboutPage() {
         </section>
 
         {/* Safety section */}
-        <section className="background-repeat border-top border-color-light-gray" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
+        <section className="background-repeat border-top forte-safety-section">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 md-mb-50px sm-mb-30px" data-anime='{ "el": "childs", "translateX": [-30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                   <li className="border-color-light-gray pt-15px pb-15px text-dark-gray">Operatives rewarded for safe and productive performance</li>
                 </ul>
               </div>
-              <div className="col-lg-5 offset-lg-1" data-anime='{ "effect": "slide", "color": "#1565C0", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
+              <div className="col-lg-5 offset-lg-1" data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
                 <img src="/images/forte/safety-brief.jpg" className="w-100 border-radius-6px" alt="Daily safety briefing on site" />
               </div>
             </div>

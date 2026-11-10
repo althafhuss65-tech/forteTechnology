@@ -2,7 +2,7 @@
 
 export default function WhyChooseUs() {
   return (
-    <section className="background-repeat border-top border-color-light-gray position-relative overlap-height z-index-1" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
+    <section className="background-repeat border-top border-color-light-gray position-relative overlap-height z-index-1" style={{ backgroundColor: "#E8EDE3" }}>
       <div className="container overlap-gap-section">
         <div className="row align-items-center position-relative justify-content-center justify-content-lg-start">
           <div className="position-absolute left-0px top-0px h-100 w-130px d-none d-lg-inline-block">

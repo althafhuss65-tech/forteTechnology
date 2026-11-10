@@ -34,7 +34,7 @@ export default function AboutSection() {
               <span className="fs-15 d-table lh-16 text-uppercase text-medium-gray fw-500 ls-1px">Started in</span>
               2020
             </span>
-            <div className="w-80 overflow-hidden position-relative md-w-90 border-radius-6px float-end" style={{ zIndex: 1 }} data-anime='{ "effect": "slide", "color": "#1565C0", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
+            <div className="w-80 overflow-hidden position-relative md-w-90 border-radius-6px float-end" style={{ zIndex: 1 }} data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
               <img className="w-100" src="/images/forte/team-spray.jpg" alt="Industrial work" />
             </div>
             <div className="position-absolute left-minus-70px bottom-minus-30px w-60 overflow-hidden md-left-minus-100px sm-left-15px" style={{ zIndex: 2 }} data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)" data-anime='{ "effect": "slide", "color": "#36332e", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>

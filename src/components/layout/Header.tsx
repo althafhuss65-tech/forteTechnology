@@ -26,7 +26,7 @@ export default function Header() {
       <nav className={`sr-nav${scrolled ? " sr-nav-scrolled" : ""}`}>
         {/* Left: Logo */}
         <Link href="/" className="sr-nav-brand">
-          <img src="/forte-logo.png" alt="Forte Technologies" height="38" />
+          <img src="/forte-logo-white.png" alt="Forte Technologies" height="38" />
         </Link>
 
         {/* Center: Frosted-glass pill with all nav links */}
