@@ -61,6 +61,7 @@ export default function CoatingSystemApproach() {
     }
 
     function update() {
+      if (!wrap || !stage) return;
       const mobile = window.innerWidth < 768;
 
       if (mobile) {
