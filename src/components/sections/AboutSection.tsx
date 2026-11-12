@@ -1,4 +1,5 @@
 import { ArrowRight, Phone } from "lucide-react";
+import Image from "next/image";
 import StatCounter from "@/components/ui/StatCounter";
 
 export default function AboutSection() {
@@ -35,10 +36,10 @@ export default function AboutSection() {
               2020
             </span>
             <div className="w-80 overflow-hidden position-relative md-w-90 border-radius-6px float-end" style={{ zIndex: 1 }} data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
-              <img className="w-100" src="/images/forte/team-spray.jpg" alt="Industrial work" />
+              <Image className="w-100" src="/images/forte/team-spray.jpg" alt="Industrial work" width={900} height={600} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 45vw" />
             </div>
             <div className="position-absolute left-minus-70px bottom-minus-30px w-60 overflow-hidden md-left-minus-100px sm-left-15px" style={{ zIndex: 2 }} data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)" data-anime='{ "effect": "slide", "color": "#36332e", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
-              <img className="w-100 border-radius-6px" src="/images/forte/columns.jpg" alt="Coating application" />
+              <Image className="w-100 border-radius-6px" src="/images/forte/columns.jpg" alt="Coating application" width={900} height={600} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 35vw" />
             </div>
           </div>
         </div>

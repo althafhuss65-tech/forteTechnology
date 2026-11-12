@@ -5,6 +5,7 @@ import FeaturesStrip from "@/components/sections/FeaturesStrip";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesOverview from "@/components/sections/ServicesOverview";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import CoatingSystemApproach from "@/components/sections/CoatingSystemApproach";
 import ProcessBand from "@/components/sections/ProcessBand";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import ContactCTA from "@/components/sections/ContactCTA";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <AboutSection />
         <ServicesOverview />
         <WhyChooseUs />
+        <CoatingSystemApproach />
         <ProcessBand />
         <FeaturedProjects />
         <ContactCTA />

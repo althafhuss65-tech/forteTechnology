@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -31,10 +32,15 @@ export default function Hero() {
       {/* Full-bleed image — fades into background at top */}
       <div className="sr-hero-image-wrap" aria-hidden="true">
         <div className="sr-hero-image-fade" />
-        <img
+        <Image
           src="/images/forte/forte-technologies-hero-img.png"
           alt=""
           className="sr-hero-image"
+          width={1180}
+          height={900}
+          priority
+          sizes="(max-width: 768px) 95vw, 85vw"
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
     </section>

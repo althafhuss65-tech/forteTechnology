@@ -1,6 +1,14 @@
 /* Crafto CSS is loaded via <link> in layout.tsx */
 /* Tailwind removed to avoid conflicts with Bootstrap/Crafto */
 
+/* overflow: hidden on html/body creates a BFC that breaks position:sticky.
+   overflow-x: clip prevents horizontal scroll without creating a BFC. */
+html, body { overflow-x: clip !important; }
+
+
+/* ── Coating System Approach ── */
+.csa-item { will-change: transform, opacity; }
+
 /* ─── Hover micro-animations ───────────────────────────────────── */
 
 /* Card lift: project cards, service cards */
@@ -377,7 +385,7 @@ html {
 
 /* Large display headline */
 .sr-hero-headline {
-  font-family: 'DM Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(28px, 3.5vw, 56px);
   font-weight: 700;
   color: #1C1C1E;
@@ -527,6 +535,15 @@ html {
   }
 }
 
+/* ─── Service / feature cards — mobile row spacing ──────────── */
+@media (max-width: 575px) {
+  .icon-with-text-style-03:not(:last-child) {
+    padding-bottom: 40px !important;
+    margin-bottom: 40px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  }
+}
+
 /* ─── AboutSection scroll-triggered reveals ─────────────────── */
 .ab-fade {
   opacity: 0;
@@ -599,3 +616,26 @@ body { color: #252B28; }
 .forte-safety-section .list-style-01 li { color: rgba(255,255,255,0.85) !important; }
 .forte-safety-section .border-color-light-gray { border-color: rgba(255,255,255,0.15) !important; }
 .forte-safety-section .fs-13 { color: rgba(255,255,255,0.55) !important; }
+
+/* ─── Contact page straddle layout ───────────────────────────── */
+.contact-straddle {
+  position: relative;
+  z-index: 2;
+  margin-top: -120px;
+}
+.contact-form-card {
+  padding: 48px 48px 52px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+}
+.contact-info-col {
+  padding-top: 2rem;
+}
+@media (min-width: 992px) {
+  .contact-info-col {
+    padding-top: calc(120px + 2rem);
+  }
+}
+@media (max-width: 767px) {
+  .contact-form-card { padding: 32px 24px 36px; }
+  .contact-straddle { margin-top: -60px; }
+}

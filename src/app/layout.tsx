@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Script from "next/script";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import CraftoReinit from "@/components/ui/CraftoReinit";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,22 +36,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className="no-js" lang="en">
       <head>
-        {/* Google Fonts - Rufina (serif) + Jost (sans) matching spa-salon */}
+        {/* Google Fonts — Rufina (serif alt-font) + Jost (body), trimmed to used weights only */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Jost:wght@300;400;500;600;700&display=swap"
         />
-        {/* Icon CDN libraries */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
+        {/* Preload Crafto JS so scripts are in cache before afterInteractive fires */}
+        <link rel="preload" href="/crafto/js/jquery.js" as="script" />
+        <link rel="preload" href="/crafto/js/vendors.min.js" as="script" />
+        <link rel="preload" href="/crafto/js/main.js" as="script" />
         {/* Crafto CSS */}
         <link rel="stylesheet" href="/crafto/css/vendors.min.css" />
         <link rel="stylesheet" href="/crafto/css/icon.min.css" />
@@ -61,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="overflow-x-hidden" data-mobile-nav-style="classic">
         {children}
         <ScrollToTop />
+        <CraftoReinit />
         {/* Load Crafto JS in sequence: jQuery → vendors → main */}
         <Script id="crafto-loader" strategy="afterInteractive">{`
           (function() {
@@ -68,11 +65,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               var s = document.createElement('script');
               s.src = src;
               s.onload = cb || function(){};
+              s.onerror = function() { console.error('Crafto: failed to load ' + src); if(cb) cb(); };
               document.head.appendChild(s);
             }
+
+            // If scripts fail entirely, reveal content after 5s by adding Crafto's .appear class
+            // (matches existing CSS [data-anime].appear { opacity:1 }, no conflict with animations)
+            var fallbackTimer = setTimeout(function() {
+              document.querySelectorAll('[data-anime]').forEach(function(el) {
+                el.classList.add('appear', 'anime-complete');
+              });
+            }, 5000);
+
             load('/crafto/js/jquery.js', function() {
+              // 30+ vendor UMDs check define.amd. Masking while vendors loads forces the
+              // global-assignment path so window.anime, window.Swiper etc are all set.
+              var savedDefine = window.define;
+              window.define = undefined;
               load('/crafto/js/vendors.min.js', function() {
-                load('/crafto/js/main.js');
+                window.define = savedDefine;
+                load('/crafto/js/main.js', function() {
+                  window._craftoReady = true;
+                  clearTimeout(fallbackTimer);
+                });
               });
             });
           })();

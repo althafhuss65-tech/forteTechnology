@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
@@ -26,7 +27,7 @@ export default function Header() {
       <nav className={`sr-nav${scrolled ? " sr-nav-scrolled" : ""}`}>
         {/* Left: Logo */}
         <Link href="/" className="sr-nav-brand">
-          <img src="/forte-logo-white.png" alt="Forte Technologies" height="38" />
+          <Image src="/forte-logo-white.png" alt="Forte Technologies" height={38} width={152} style={{ width: "auto", height: "38px" }} priority />
         </Link>
 
         {/* Center: Frosted-glass pill with all nav links */}

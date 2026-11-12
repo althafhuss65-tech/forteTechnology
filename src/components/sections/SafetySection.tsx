@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SafetySection() {
   return (
     <section className="background-repeat border-top border-color-light-gray" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
@@ -16,8 +18,8 @@ export default function SafetySection() {
               <li className="border-color-light-gray pt-15px pb-15px text-dark-gray">Operatives rewarded for safe and productive performance</li>
             </ul>
           </div>
-          <div className="col-lg-5 offset-lg-1" data-anime='{ "effect": "slide", "color": "#1565C0", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
-            <img src="/images/forte/safety-brief.jpg" className="w-100 border-radius-6px" alt="Daily safety briefing on site" />
+          <div className="col-lg-5 offset-lg-1" data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
+            <Image src="/images/forte/safety-brief.jpg" className="w-100 border-radius-6px" alt="Daily safety briefing on site" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 45vw" />
           </div>
         </div>
       </div>

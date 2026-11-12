@@ -5,8 +5,8 @@ const STATIC_PROJECTS = [
   {
     num: "01",
     category: "Protective Coating",
-    title: "Falcon Mall, Thrissur",
-    desc: "Complete protective coating system on steel facade structures using AkzoNobel products for one of Kerala's largest entertainment developments.",
+    title: "Protective Coatings",
+    desc: "Complete anticorrosive and protective coating systems on structural steel and industrial facilities, using manufacturer-recommended systems for long-term corrosion resistance.",
     img: "/images/forte/aerial-roof.jpg",
   },
   {
