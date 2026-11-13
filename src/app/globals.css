@@ -25,15 +25,7 @@ html, body { overflow-x: clip !important; }
   transition: background-color 0.3s ease;
 }
 .services-box-style-02:hover .bg-very-light-gray {
-  background-color: #3B9EED !important;
-}
-.services-box-style-02:hover .bg-very-light-gray .text-base-color,
-.services-box-style-02:hover .bg-very-light-gray .alt-font,
-.services-box-style-02:hover .bg-very-light-gray .text-dark-gray,
-.services-box-style-02:hover .bg-very-light-gray p,
-.services-box-style-02:hover .bg-very-light-gray .btn-link {
-  color: rgba(255, 255, 255, 0.92) !important;
-  transition: color 0.3s ease;
+  background-color: #D6EAFB !important;
 }
 
 /* Photo zoom inside cover-background containers */
