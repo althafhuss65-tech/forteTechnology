@@ -25,7 +25,7 @@ html, body { overflow-x: clip !important; }
   transition: background-color 0.3s ease;
 }
 .services-box-style-02:hover .bg-very-light-gray {
-  background-color: #0182EE !important;
+  background-color: #3B9EED !important;
 }
 .services-box-style-02:hover .bg-very-light-gray .text-base-color,
 .services-box-style-02:hover .bg-very-light-gray .alt-font,
