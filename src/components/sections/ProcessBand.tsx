@@ -21,7 +21,7 @@ const STEPS = [
   },
 ];
 
-const BRANDS = ["AkzoNobel", "International", "GEM Paints", "Jotun", "Berger"];
+const BRANDS = ["AkzoNobel", "International", "GEM Paints", "Jotun", "Berger", "Asian Paints"];
 
 export default function ProcessBand() {
   return (
@@ -59,10 +59,10 @@ export default function ProcessBand() {
             </span>
           </div>
           <div className="col-lg-8 col-12">
-            <div className="d-flex justify-content-lg-end flex-wrap">
+            <div className="d-flex justify-content-lg-end flex-nowrap">
               {BRANDS.map((name, i) => (
                 <span key={name} className="forte-brand-name alt-font fw-500"
-                  style={{ padding: "4px 20px", borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.1)" : "none" }}>
+                  style={{ padding: "4px 13px", borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.1)" : "none", whiteSpace: "nowrap" }}>
                   {name}
                 </span>
               ))}
