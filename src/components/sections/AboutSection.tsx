@@ -43,7 +43,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
+        <div className="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center forte-stats-row" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
           <div className="col last-paragraph-no-margin sm-mb-30px">
             <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={6} suffix="+" /></h2>
             <p className="text-dark-gray lh-28">Years active</p>

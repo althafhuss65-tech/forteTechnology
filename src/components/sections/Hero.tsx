@@ -6,6 +6,12 @@ export default function Hero() {
     <section className="sr-hero">
       {/* Text content — floats above the image */}
       <div className="sr-hero-content">
+        {/* Eyebrow pill — blue dot echoes logo colour */}
+        <div className="sr-hero-pill">
+          <span className="sr-hero-pill-dot" />
+          Industrial coating specialists — Bangalore
+        </div>
+
         {/* Large display headline */}
         <h1 className="sr-hero-headline">
           Protective Coatings Built<br />

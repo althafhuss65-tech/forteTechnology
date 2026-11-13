@@ -73,7 +73,7 @@ export default function AboutPage() {
                 </p>
                 <div className="d-block d-md-flex align-items-center border-top border-color-light-gray pt-25px sm-pt-35px">
                   <div className="col-auto text-center sm-mb-15px">
-                    <h2 className="text-dark-gray fw-600 ls-minus-2px mb-0 alt-font">6+</h2>
+                    <h2 className="fw-600 ls-minus-2px mb-0 alt-font" style={{ color: "#0182EE" }}>6+</h2>
                   </div>
                   <div className="col text-center text-md-start ps-20px sm-ps-0">
                     <div className="fs-20">

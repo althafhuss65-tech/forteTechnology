@@ -617,6 +617,49 @@ body { color: #252B28; }
 .forte-safety-section .border-color-light-gray { border-color: rgba(255,255,255,0.15) !important; }
 .forte-safety-section .fs-13 { color: rgba(255,255,255,0.55) !important; }
 
+/* ═══════════════════════════════════════════════════════════════
+   Blue accent — logo blue applied to action + numerical elements
+   #0182EE matches the Forte Technologies logo; olive stays on
+   brand identity elements (navbar, section backgrounds, eyebrows)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Action buttons → blue ──────────────────────────────────── */
+.sr-hero-btn-primary               { background: #0182EE; }
+.sr-hero-btn-primary:hover         { background: #016DD4; }
+
+.sr-nav-cta                        { background: #0182EE !important; color: #fff !important; }
+.sr-nav-cta:hover                  { background: #016DD4 !important; }
+
+.sr-mobile-cta                     { background: #0182EE !important; }
+.sr-mobile-cta:hover               { background: #016DD4 !important; }
+
+/* ─── Active nav pill → blue tint ───────────────────────────── */
+.sr-nav-pill-link.sr-active {
+  background: rgba(1, 130, 238, 0.22) !important;
+  color: #fff !important;
+}
+
+/* ─── ProcessBand numbers + lines → blue ────────────────────── */
+.pb-num   { color: #0182EE; }
+.pb-accent { background-color: #0182EE; }
+
+/* ─── Stat counter h2s → blue (class added to row in component) */
+.forte-stats-row h2 { color: #0182EE !important; }
+
+/* ─── ContactCTA primary button → blue ──────────────────────── */
+.forte-cta-blue {
+  background: #0182EE !important;
+  border-color: #0182EE !important;
+  color: #fff !important;
+}
+.forte-cta-blue:hover {
+  background: #016DD4 !important;
+  border-color: #016DD4 !important;
+}
+
+/* ─── Focus ring → blue ──────────────────────────────────────── */
+:focus-visible { outline-color: #0182EE; }
+
 /* ─── Contact page straddle layout ───────────────────────────── */
 .contact-straddle {
   position: relative;
