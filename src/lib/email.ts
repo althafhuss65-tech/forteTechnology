@@ -22,11 +22,11 @@ export async function sendEnquiryEmail(data: {
     from: process.env.SMTP_FROM,
     to: data.recipientEmail,
     replyTo: data.email,
-    subject: `New Enquiry: ${data.subject || "Website Contact Form"} — ${data.name}`,
+    subject: `New Enquiry: ${data.subject || "Website Contact Form"} - ${data.name}`,
     html: `
       <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
-        <div style="background:#1565C0;padding:24px 32px;">
-          <h1 style="color:#fff;margin:0;font-size:20px;">New Enquiry — Forte Technologies</h1>
+        <div style="background:#354B35;padding:24px 32px;">
+          <h1 style="color:#fff;margin:0;font-size:20px;">New Enquiry - Forte Technologies</h1>
         </div>
         <div style="padding:32px;">
           <table style="width:100%;border-collapse:collapse;">

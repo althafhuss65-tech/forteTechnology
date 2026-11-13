@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Forte Technologies — Protective & Industrial Coating Specialists",
+    default: "Forte Technologies - Protective & Industrial Coating Specialists",
     template: "%s | Forte Technologies",
   },
   description:
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.fortetechnologies.in",
     siteName: "Forte Technologies",
-    title: "Forte Technologies — Protective & Industrial Coating Specialists",
+    title: "Forte Technologies - Protective & Industrial Coating Specialists",
     description:
       "Forte Technologies is a Bangalore-based industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
     images: [{ url: "/images/forte/hero-1.jpg", width: 1600, height: 900, alt: "Forte Technologies industrial coating work" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Forte Technologies — Protective & Industrial Coating Specialists",
+    title: "Forte Technologies - Protective & Industrial Coating Specialists",
     description:
       "Forte Technologies is a Bangalore-based industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
     images: ["/images/forte/hero-1.jpg"],
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className="no-js" lang="en">
       <head>
-        {/* Google Fonts — Rufina (serif alt-font) + Jost (body), trimmed to used weights only */}
+        {/* Google Fonts - Rufina (serif alt-font) + Jost (body), trimmed to used weights only */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

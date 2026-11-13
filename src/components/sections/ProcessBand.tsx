@@ -12,7 +12,7 @@ const STEPS = [
   {
     num: "03",
     title: "Surface Preparation",
-    desc: "Blasting or mechanical preparation to the specified standard — the most critical step for coating adhesion and longevity.",
+    desc: "Blasting or mechanical preparation to the specified standard - the most critical step for coating adhesion and longevity.",
   },
   {
     num: "04",
@@ -32,7 +32,7 @@ export default function ProcessBand() {
         <div className="row mb-2" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 0, "duration": 600, "staggervalue": 300, "easing": "easeOutQuad" }'>
           <div className="col-lg-8 col-12">
             <span className="fs-15 mb-10px text-base-color fw-500 d-block">How we work</span>
-            <h3 className="alt-font ls-minus-1px text-dark-gray mb-0">From assessment to handover — a proven process.</h3>
+            <h3 className="alt-font ls-minus-1px text-dark-gray mb-0">From assessment to handover - a proven process.</h3>
           </div>
         </div>
 

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/sections/ContactForm";
-import { ArrowRight, TrendingUp, Phone, Mail, MapPin } from "lucide-react";
-import StatCounter from "@/components/ui/StatCounter";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -11,151 +10,252 @@ export const metadata: Metadata = {
     "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 6364227475 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
 };
 
+const CONTACT_ITEMS = [
+  {
+    Icon: Phone,
+    label: "Call us",
+    value: "+91 6364 227475",
+    href: "tel:+916364227475",
+  },
+  {
+    Icon: Mail,
+    label: "Write to us",
+    value: "info@fortetechnologies.in",
+    href: "mailto:info@fortetechnologies.in",
+  },
+  {
+    Icon: MapPin,
+    label: "Find us",
+    value: "Attibele, Bangalore",
+    href: null,
+  },
+  {
+    Icon: Clock,
+    label: "Working hours",
+    value: "Mon – Sat, 9 am – 6 pm",
+    href: null,
+  },
+];
+
+const STEPS = [
+  {
+    n: "01",
+    title: "A reply within a day",
+    text: "From our technical team, with follow-up questions about your project.",
+  },
+  {
+    n: "02",
+    title: "A site assessment",
+    text: "We review the substrate, environment and your specification requirements.",
+  },
+  {
+    n: "03",
+    title: "A detailed proposal",
+    text: "With the right coating system, estimated timeline and fixed project cost.",
+  },
+];
+
 export default function ContactPage() {
   return (
     <>
       <Header />
       <main>
-        {/* Page title */}
+        {/* Page hero - left-aligned, extra pb for form straddle */}
         <section
           className="page-title-parallax-background bg-dark-gray ipad-top-space-margin"
           data-parallax-background-ratio="0.5"
-          style={{ backgroundImage: "url('/images/forte/roof-coat.jpg')" }}
+          style={{
+            backgroundImage: "url('/images/forte/tank-blast.jpg')",
+            paddingBottom: "160px",
+          }}
         >
-          <div className="opacity-very-light bg-gradient-nero-grey-brown"></div>
-          <div className="container">
-            <div className="row align-items-center justify-content-center">
-              <div className="col-12 text-center position-relative page-title-extra-large">
-                <div className="d-flex flex-column extra-small-screen">
-                  <div className="mt-auto">
-                    <h1
-                      className="text-white alt-font mb-0 text-shadow-extra-large fw-400 ls-minus-1px"
-                      data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "filter": ["blur(20px)","blur(0px)"], "string": ["Contact us"], "duration": 500, "delay": 0, "speed": 50, "easing": "easeOutQuad" }'
-                    ></h1>
-                  </div>
-                  <div className="mt-auto justify-content-center breadcrumb breadcrumb-style-01 text-white">
-                    <ul data-anime='{ "el": "childs", "translateY": [50,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+          <div className="opacity-medium bg-gradient-nero-grey-brown"></div>
+          <div className="position-absolute w-100 h-100 top-0 start-0" style={{ backgroundColor: "rgba(53,75,53,0.35)", zIndex: 0 }}></div>
+          {/* edge rail */}
+          <p
+            className="d-none d-xl-block position-absolute text-white fw-400 fs-11 ls-3px text-uppercase"
+            aria-hidden="true"
+            style={{
+              right: "50px",
+              bottom: "180px",
+              writingMode: "vertical-rl",
+              opacity: 0.4,
+              letterSpacing: "0.18em",
+            }}
+          >
+            Protective · Industrial · Floor · Fireproofing - est. 2020
+          </p>
+          <div className="container position-relative" style={{ zIndex: 1 }}>
+            <div className="row">
+              <div className="col-xl-8 col-lg-9 position-relative">
+                <div
+                  data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
+                >
+                  {/* breadcrumb */}
+                  <div className="breadcrumb breadcrumb-style-01 justify-content-start mb-25px">
+                    <ul>
                       <li><a href="/" className="text-white">Home</a></li>
-                      <li>Contact us</li>
+                      <li className="text-white opacity-6">Contact us</li>
                     </ul>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats strip */}
-        <section className="background-repeat" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
-          <div className="container">
-            <div className="row mb-5 sm-mb-40px">
-              <div className="col-md-6 overflow-hidden" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                <h1 className="alt-font fw-700 text-dark-gray ls-minus-2px">Get in touch</h1>
-              </div>
-              <div className="col-md-6 last-paragraph-no-margin">
-                <p className="w-85 xl-w-100" data-anime='{ "el": "lines", "translateY": [30,0], "translateX": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>Tell us about your project. Our team will review your enquiry and respond with an assessment and recommendation as soon as possible.</p>
-              </div>
-            </div>
-            <div className="row row-cols-1 row-cols-md-4 row-cols-sm-2 mb-6 xs-mb-40px text-center text-sm-start" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-              <div className="col last-paragraph-no-margin sm-mb-30px">
-                <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={6} suffix="+" /><sup><TrendingUp size={18} color="#1565C0" strokeWidth={2} style={{ display: "inline", verticalAlign: "super" }} /></sup></h2>
-                <p className="text-dark-gray lh-28">Years active</p>
-              </div>
-              <div className="col last-paragraph-no-margin sm-mb-30px">
-                <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={5} /><sup><TrendingUp size={18} color="#1565C0" strokeWidth={2} style={{ display: "inline", verticalAlign: "super" }} /></sup></h2>
-                <p className="text-dark-gray lh-28">Approved brands</p>
-              </div>
-              <div className="col last-paragraph-no-margin xs-mb-30px">
-                <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={100} suffix="%" /><sup><TrendingUp size={18} color="#1565C0" strokeWidth={2} style={{ display: "inline", verticalAlign: "super" }} /></sup></h2>
-                <p className="text-dark-gray lh-28">Safety compliance</p>
-              </div>
-              <div className="col last-paragraph-no-margin">
-                <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={4} /><sup><TrendingUp size={18} color="#1565C0" strokeWidth={2} style={{ display: "inline", verticalAlign: "super" }} /></sup></h2>
-                <p className="text-dark-gray lh-28">Core service areas</p>
-              </div>
-            </div>
-            <div className="row align-items-center justify-content-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-              <div className="col-auto text-center md-mb-20px">
-                <span className="text-dark-gray fw-400 alt-font fs-24">Ready to protect your assets?</span>
-              </div>
-              <div className="col-auto d-none d-lg-block">
-                <span className="w-200px lg-w-110px h-1px bg-dark-gray opacity-2 d-flex mx-auto"></span>
-              </div>
-              <div className="col-auto">
-                <a href="#enquiry" className="btn btn-small btn-double-border btn-border-base-color section-link">
-                  <span>
-                    <span className="btn-double-text" data-text="Send an enquiry">Send an enquiry</span>
-                    <span><ArrowRight size={14} strokeWidth={2} /></span>
+                  {/* eyebrow */}
+                  <span
+                    className="fs-13 fw-500 d-block text-uppercase ls-3px mb-20px"
+                    style={{ color: "#879477" }}
+                  >
+                    Contact · Mon – Sat, 9 am – 6 pm
                   </span>
-                </a>
+                  {/* two-line h1 */}
+                  <h1
+                    className="alt-font text-white mb-25px"
+                    style={{
+                      fontSize: "clamp(2.25rem, 1.5rem + 3vw, 4.25rem)",
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.025em",
+                    }}
+                  >
+                    <span className="d-block fw-300">Tell us about your project.</span>
+                    <span className="d-block fw-700">We'll respond within a day.</span>
+                  </h1>
+                  {/* lead */}
+                  <p
+                    className="mb-0"
+                    style={{
+                      color: "rgba(255,255,255,0.72)",
+                      fontSize: "1.0625rem",
+                      lineHeight: 1.75,
+                      maxWidth: "520px",
+                    }}
+                  >
+                    Describe your surface, environment and timeline. Our team will assess your requirements and reply with the right coating recommendation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Parallax banner */}
-        <section
-          className="position-relative one-half-screen sm-small-screen"
-          data-parallax-background-ratio="0.5"
-          style={{ backgroundImage: "url('/images/forte/aerial-roof.jpg')" }}
-        >
-          <div className="opacity-light bg-gradient-nero-grey-brown"></div>
-          <div className="fs-225 lg-fs-160 sm-fs-200 xs-fs-140 ls-minus-10px alt-font text-very-light-gray fw-700 position-absolute left-100px bottom-minus-70px lg-bottom-minus-50px xs-bottom-minus-30px lg-left-0px">contact</div>
-        </section>
-
-        {/* Contact info + form */}
-        <section
-          id="enquiry"
-          className="background-repeat position-relative sm-pt-0"
-          style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}
-        >
+        {/* Straddle contact section */}
+        <section className="contact-straddle pb-7" id="enquiry">
           <div className="container">
-            <div className="row justify-content-center mb-2">
-              <div className="col-12 text-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">Get in touch with us</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray">How can we help you?</h3>
-              </div>
-            </div>
-            <div className="row row-cols-md-1 justify-content-center mb-10 md-mb-15 sm-mb-0">
-              <div className="col-xl-9 col-lg-10 col-md-12">
-                <ContactForm />
-              </div>
-            </div>
-            {/* Contact details */}
-            <div className="row row-cols-1 row-cols-md-3 row-cols-sm-1 text-center mt-5 border-top border-color-light-gray pt-6" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
-              <div className="col icon-with-text-style-03 border-end border-color-light-gray md-mb-30px xs-border-end-0">
-                <div className="feature-box">
-                  <div className="feature-box-icon mb-20px">
-                    <Phone size={52} color="#1565C0" strokeWidth={1.5} />
-                  </div>
-                  <div className="feature-box-content last-paragraph-no-margin">
-                    <span className="d-inline-block text-dark-gray alt-font fs-20 mb-5px">Phone</span>
-                    <p><a href="tel:+916364227475" className="text-dark-gray text-dark-gray-hover">+91 6364 227475</a></p>
-                  </div>
+            <div className="row g-5">
+
+              {/* Left: white form card */}
+              <div className="col-lg-7">
+                <div
+                  className="bg-white border-radius-6px contact-form-card"
+                  data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 120, "easing": "easeOutQuad" }'
+                >
+                  <h2
+                    className="alt-font text-dark-gray mb-5px"
+                    style={{ fontSize: "clamp(1.625rem, 1.3rem + 1vw, 2.125rem)", letterSpacing: "-0.025em" }}
+                  >
+                    <span className="d-block fw-300">Send us</span>
+                    <span className="d-block fw-700">a message</span>
+                  </h2>
+                  <p className="fs-14 mb-40px" style={{ color: "#879477" }}>
+                    Fields marked * are required.
+                  </p>
+                  <ContactForm />
                 </div>
               </div>
-              <div className="col icon-with-text-style-03 border-end border-color-light-gray md-mb-30px xs-border-end-0">
-                <div className="feature-box">
-                  <div className="feature-box-icon mb-20px">
-                    <Mail size={52} color="#1565C0" strokeWidth={1.5} />
+
+              {/* Right: contact info + steps */}
+              <div className="col-lg-5">
+                <div
+                  className="contact-info-col"
+                  data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 200, "staggervalue": 100, "easing": "easeOutQuad" }'
+                >
+
+                  {/* Contact items */}
+                  <ul className="list-unstyled m-0 p-0 d-flex flex-column" style={{ gap: "24px" }} role="list">
+                    {CONTACT_ITEMS.map(({ Icon, label, value, href }) => (
+                      <li key={label} className="d-flex align-items-start" style={{ gap: "16px" }}>
+                        <span
+                          className="d-flex align-items-center justify-content-center flex-shrink-0"
+                          style={{
+                            width: "44px",
+                            height: "44px",
+                            borderRadius: "50%",
+                            border: "1px solid #E8EDE3",
+                            backgroundColor: "#F7F8F4",
+                            marginTop: "2px",
+                          }}
+                        >
+                          <Icon size={18} color="#354B35" strokeWidth={1.5} />
+                        </span>
+                        <span>
+                          <span
+                            className="fs-12 fw-500 text-uppercase d-block mb-5px"
+                            style={{ color: "#879477", letterSpacing: "0.1em" }}
+                          >
+                            {label}
+                          </span>
+                          {href ? (
+                            <a
+                              href={href}
+                              className="alt-font fs-17 fw-600 text-dark-gray"
+                              style={{ textDecoration: "none" }}
+                            >
+                              {value}
+                            </a>
+                          ) : (
+                            <span className="alt-font fs-17 fw-600 text-dark-gray">{value}</span>
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* What happens next */}
+                  <div
+                    className="mt-40px pt-40px"
+                    style={{ borderTop: "1px solid #E8EDE3" }}
+                  >
+                    <p className="alt-font fs-18 fw-700 text-dark-gray mb-30px" style={{ letterSpacing: "-0.01em" }}>
+                      What happens next
+                    </p>
+                    <div className="d-flex flex-column" style={{ gap: "0" }}>
+                      {STEPS.map(({ n, title, text }, i) => (
+                        <div key={n} className="d-flex" style={{ gap: "16px" }}>
+                          {/* marker + line */}
+                          <div className="d-flex flex-column align-items-center flex-shrink-0" style={{ width: "36px" }}>
+                            <div
+                              className="d-flex align-items-center justify-content-center"
+                              style={{
+                                width: "36px",
+                                height: "36px",
+                                borderRadius: "50%",
+                                backgroundColor: "#354B35",
+                                flexShrink: 0,
+                              }}
+                            >
+                              <span className="text-white fw-600" style={{ fontSize: "11px" }}>{n}</span>
+                            </div>
+                            {i < STEPS.length - 1 && (
+                              <div
+                                style={{
+                                  width: "1px",
+                                  height: "36px",
+                                  backgroundColor: "rgba(53,75,53,0.18)",
+                                  margin: "4px 0",
+                                }}
+                              />
+                            )}
+                          </div>
+                          {/* content */}
+                          <div style={{ paddingBottom: i < STEPS.length - 1 ? "0" : "0", paddingTop: "6px" }} className={i < STEPS.length - 1 ? "mb-30px" : ""}>
+                            <div className="text-dark-gray fw-600 mb-5px" style={{ fontSize: "15px" }}>{title}</div>
+                            <p className="mb-0 lh-26" style={{ fontSize: "14px", color: "#879477" }}>{text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="feature-box-content last-paragraph-no-margin">
-                    <span className="d-inline-block text-dark-gray alt-font fs-20 mb-5px">Email</span>
-                    <p><a href="mailto:info@fortetechnologies.in" className="text-dark-gray text-dark-gray-hover">info@fortetechnologies.in</a></p>
-                  </div>
+
                 </div>
               </div>
-              <div className="col icon-with-text-style-03">
-                <div className="feature-box">
-                  <div className="feature-box-icon mb-20px">
-                    <MapPin size={52} color="#1565C0" strokeWidth={1.5} />
-                  </div>
-                  <div className="feature-box-content last-paragraph-no-margin">
-                    <span className="d-inline-block text-dark-gray alt-font fs-20 mb-5px">Address</span>
-                    <p>No. 618, Mahidhara Fortune City,<br />Attibele, Bangalore – 562107</p>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </section>

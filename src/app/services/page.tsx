@@ -96,7 +96,7 @@ const REFURBISHMENT = [
     icon: "clipboard",
     title: "Project Execution",
     tags: "Planning · Mobilisation · Quality Control · Handover",
-    desc: "End-to-end project delivery through coordinated planning, resource mobilisation, surface preparation, coating application and quality control — with a focus on specifications, safe execution and project schedules.",
+    desc: "End-to-end project delivery through coordinated planning, resource mobilisation, surface preparation, coating application and quality control - with a focus on specifications, safe execution and project schedules.",
   },
 ];
 
@@ -215,7 +215,7 @@ export default function ServicesPage() {
         <ServiceSection
           eyebrow="Refurbishment & Execution"
           heading="Industrial Refurbishment & Project Execution"
-          description="End-to-end management of industrial refurbishment and coating projects — from assessment and surface treatment through to quality handover."
+          description="End-to-end management of industrial refurbishment and coating projects - from assessment and surface treatment through to quality handover."
           items={REFURBISHMENT}
           cols="row-cols-lg-2"
         />

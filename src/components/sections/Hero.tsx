@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="sr-hero">
-      {/* Text content — floats above the image */}
+      {/* Text content - floats above the image */}
       <div className="sr-hero-content">
-        {/* Eyebrow pill — blue dot echoes logo colour */}
+        {/* Eyebrow pill - blue dot echoes logo colour */}
         <div className="sr-hero-pill">
           <span className="sr-hero-pill-dot" />
-          Industrial coating specialists — Bangalore
+          Industrial coating specialists - Bangalore
         </div>
 
         {/* Large display headline */}
@@ -35,7 +35,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Full-bleed image — fades into background at top */}
+      {/* Full-bleed image - fades into background at top */}
       <div className="sr-hero-image-wrap" aria-hidden="true">
         <div className="sr-hero-image-fade" />
         <Image

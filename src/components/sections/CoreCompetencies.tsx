@@ -1,7 +1,7 @@
 import { Icon } from "@/components/ui/Icon";
 
 const COMPETENCIES = [
-  { icon: "layers", title: "Surface Preparation", desc: "Dry abrasive blast cleaning, water blasting, hand and power tool cleaning — ensuring maximum coating adhesion and lifespan." },
+  { icon: "layers", title: "Surface Preparation", desc: "Dry abrasive blast cleaning, water blasting, hand and power tool cleaning - ensuring maximum coating adhesion and lifespan." },
   { icon: "shield", title: "Anticorrosive Coatings", desc: "Specially formulated coatings protecting surfaces from moisture, oxygen and corrosive substances, preventing rust and deterioration." },
   { icon: "hard-hat", title: "Protective Coatings", desc: "Barrier coatings against corrosion, wear, abrasion, chemical exposure, weathering and UV radiation for extended service life." },
   { icon: "thermometer", title: "Thermal Insulation", desc: "Specialised coatings that reduce heat transfer on walls, roofs, pipelines and equipment to improve energy efficiency." },
