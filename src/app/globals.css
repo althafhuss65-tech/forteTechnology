@@ -20,6 +20,22 @@ html, body { overflow-x: clip !important; }
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Featured project card — right content panel turns blue on hover */
+.services-box-style-02 .bg-very-light-gray {
+  transition: background-color 0.3s ease;
+}
+.services-box-style-02:hover .bg-very-light-gray {
+  background-color: #0182EE !important;
+}
+.services-box-style-02:hover .bg-very-light-gray .text-base-color,
+.services-box-style-02:hover .bg-very-light-gray .alt-font,
+.services-box-style-02:hover .bg-very-light-gray .text-dark-gray,
+.services-box-style-02:hover .bg-very-light-gray p,
+.services-box-style-02:hover .bg-very-light-gray .btn-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+  transition: color 0.3s ease;
+}
+
 /* Photo zoom inside cover-background containers */
 .services-box-img .cover-background,
 .swiper-slide .cover-background {
