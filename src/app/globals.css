@@ -25,7 +25,7 @@ html, body { overflow-x: clip !important; }
   transition: background-color 0.3s ease;
 }
 .services-box-style-02:hover .bg-very-light-gray {
-  background-color: #D6EAFB !important;
+  background-color: #A8EEFF !important;
 }
 
 /* Photo zoom inside cover-background containers */
