@@ -8,7 +8,7 @@ export default function FeaturesStrip() {
           <div className="col icon-with-text-style-03 border-end border-color-light-gray md-mb-30px xs-border-end-0">
             <div className="feature-box ps-8 pe-8 xl-ps-2 xl-pe-2">
               <div className="feature-box-icon mb-20px">
-                <Award size={52} color="#0182EE" strokeWidth={1.5} />
+                <Award size={52} color="#879477" strokeWidth={1.5} />
               </div>
               <div className="feature-box-content last-paragraph-no-margin">
                 <span className="d-inline-block text-dark-gray alt-font fs-22">Certified applicators</span>
@@ -19,7 +19,7 @@ export default function FeaturesStrip() {
           <div className="col icon-with-text-style-03 border-end border-color-light-gray md-mb-30px md-border-end-0">
             <div className="feature-box ps-8 pe-8 xl-ps-2 xl-pe-2">
               <div className="feature-box-icon mb-20px">
-                <Layers size={52} color="#0182EE" strokeWidth={1.5} />
+                <Layers size={52} color="#879477" strokeWidth={1.5} />
               </div>
               <div className="feature-box-content last-paragraph-no-margin">
                 <span className="d-inline-block text-dark-gray alt-font fs-22">Industrial grade</span>
@@ -30,7 +30,7 @@ export default function FeaturesStrip() {
           <div className="col icon-with-text-style-03 border-end border-color-light-gray xs-border-end-0 xs-mb-30px">
             <div className="feature-box ps-8 pe-8 xl-ps-2 xl-pe-2">
               <div className="feature-box-icon mb-20px">
-                <Shield size={52} color="#0182EE" strokeWidth={1.5} />
+                <Shield size={52} color="#879477" strokeWidth={1.5} />
               </div>
               <div className="feature-box-content last-paragraph-no-margin">
                 <span className="d-inline-block text-dark-gray alt-font fs-22">Safety compliant</span>
@@ -41,7 +41,7 @@ export default function FeaturesStrip() {
           <div className="col icon-with-text-style-03">
             <div className="feature-box ps-8 pe-8 xl-ps-2 xl-pe-2">
               <div className="feature-box-icon mb-20px">
-                <Clock size={52} color="#0182EE" strokeWidth={1.5} />
+                <Clock size={52} color="#879477" strokeWidth={1.5} />
               </div>
               <div className="feature-box-content last-paragraph-no-margin">
                 <span className="d-inline-block text-dark-gray alt-font fs-22">Since 2020</span>

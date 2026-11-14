@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Eyebrow pill - blue dot echoes logo colour */}
         <div className="sr-hero-pill">
           <span className="sr-hero-pill-dot" />
-          Industrial coating specialists - Bangalore
+          Industrial coating specialists
         </div>
 
         {/* Large display headline */}

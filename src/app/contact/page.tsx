@@ -7,27 +7,21 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 6364227475 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
+    "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 7899298718 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
 };
 
 const CONTACT_ITEMS = [
   {
     Icon: Phone,
     label: "Call us",
-    value: "+91 6364 227475",
-    href: "tel:+916364227475",
+    value: "+91 78992 98718",
+    href: "tel:+917899298718",
   },
   {
     Icon: Mail,
     label: "Write to us",
     value: "info@fortetechnologies.in",
     href: "mailto:info@fortetechnologies.in",
-  },
-  {
-    Icon: MapPin,
-    label: "Find us",
-    value: "Attibele, Bangalore",
-    href: null,
   },
   {
     Icon: Clock,
@@ -66,45 +60,21 @@ export default function ContactPage() {
           data-parallax-background-ratio="0.5"
           style={{
             backgroundImage: "url('/images/forte/tank-blast.jpg')",
-            paddingBottom: "160px",
+            paddingBottom: "120px",
+            paddingTop: "120px",
+            display: "flex",
+            alignItems: "center",
+            minHeight: "480px",
           }}
         >
           <div className="opacity-medium bg-gradient-nero-grey-brown"></div>
           <div className="position-absolute w-100 h-100 top-0 start-0" style={{ backgroundColor: "rgba(53,75,53,0.35)", zIndex: 0 }}></div>
-          {/* edge rail */}
-          <p
-            className="d-none d-xl-block position-absolute text-white fw-400 fs-11 ls-3px text-uppercase"
-            aria-hidden="true"
-            style={{
-              right: "50px",
-              bottom: "180px",
-              writingMode: "vertical-rl",
-              opacity: 0.4,
-              letterSpacing: "0.18em",
-            }}
-          >
-            Protective · Industrial · Floor · Fireproofing - est. 2020
-          </p>
-          <div className="container position-relative" style={{ zIndex: 1 }}>
-            <div className="row">
-              <div className="col-xl-8 col-lg-9 position-relative">
+          <div className="container position-relative h-100" style={{ zIndex: 1 }}>
+            <div className="row h-100 align-items-center justify-content-center">
+              <div className="col-12 position-relative text-center">
                 <div
                   data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
                 >
-                  {/* breadcrumb */}
-                  <div className="breadcrumb breadcrumb-style-01 justify-content-start mb-25px">
-                    <ul>
-                      <li><a href="/" className="text-white">Home</a></li>
-                      <li className="text-white opacity-6">Contact us</li>
-                    </ul>
-                  </div>
-                  {/* eyebrow */}
-                  <span
-                    className="fs-13 fw-500 d-block text-uppercase ls-3px mb-20px"
-                    style={{ color: "#879477" }}
-                  >
-                    Contact · Mon – Sat, 9 am – 6 pm
-                  </span>
                   {/* two-line h1 */}
                   <h1
                     className="alt-font text-white mb-25px"
@@ -124,7 +94,7 @@ export default function ContactPage() {
                       color: "rgba(255,255,255,0.72)",
                       fontSize: "1.0625rem",
                       lineHeight: 1.75,
-                      maxWidth: "520px",
+                      maxWidth: "100%",
                     }}
                   >
                     Describe your surface, environment and timeline. Our team will assess your requirements and reply with the right coating recommendation.

@@ -4,13 +4,12 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin me-auto z-index-1 text-center text-sm-start xs-mb-20px">
-            <span className="fs-20 fw-500 text-dark-gray d-block mb-5px">Our location</span>
-            <p className="w-100">No. 618, Mahidhara Fortune City,<br />Attibele, Bangalore – 562107.</p>
+            <img src="/forte-techn-olive-green-logo.png" alt="Forte Technologies" style={{ height: "120px", width: "auto" }} />
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 last-paragraph-no-margin text-center text-sm-end z-index-1">
             <span className="fs-20 fw-500 text-dark-gray d-block mb-5px">How can we help?</span>
             <a href="mailto:info@fortetechnologies.in">info@fortetechnologies.in</a><br />
-            <a href="tel:+916364227475">+91 6364 227475</a>
+            <a href="tel:+917899298718">+91 78992 98718</a>
           </div>
         </div>
         <div className="row align-items-center justify-content-center mt-20px mb-10px md-mb-20px">
@@ -54,7 +53,7 @@ export default function Footer() {
             <p>&copy; {new Date().getFullYear()} <a href="/" className="text-decoration-line-bottom text-dark-gray fw-500">Forte Technologies.</a> All rights reserved.</p>
           </div>
           <div className="col-md-6 text-center text-md-end last-paragraph-no-margin">
-            <p>Protective &amp; Industrial Coating Specialists · Bangalore, India</p>
+            <p>Protective &amp; Industrial Coating Specialists</p>
           </div>
         </div>
       </div>

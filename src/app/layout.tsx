@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Forte Technologies",
   },
   description:
-    "Forte Technologies is a Bangalore-based industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
+    "Forte Technologies is an industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
   robots: { index: true, follow: true },
   metadataBase: new URL("https://www.fortetechnologies.in"),
   openGraph: {
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     siteName: "Forte Technologies",
     title: "Forte Technologies - Protective & Industrial Coating Specialists",
     description:
-      "Forte Technologies is a Bangalore-based industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
+      "Forte Technologies is an industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
     images: [{ url: "/images/forte/hero-1.jpg", width: 1600, height: 900, alt: "Forte Technologies industrial coating work" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Forte Technologies - Protective & Industrial Coating Specialists",
     description:
-      "Forte Technologies is a Bangalore-based industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
+      "Forte Technologies is an industrial coating specialist offering protective coatings, anticorrosive coatings, thermal insulation, fireproofing and floor coating solutions.",
     images: ["/images/forte/hero-1.jpg"],
   },
 };

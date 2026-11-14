@@ -176,7 +176,7 @@ export default function CoatingSystemApproach() {
               </p>
               <p
                 className="lh-28 fs-14 mb-0"
-                style={{ color: "#526747", borderLeft: "3px solid #0182EE", paddingLeft: "16px" }}
+                style={{ color: "#526747", borderLeft: "3px solid #526747", paddingLeft: "16px" }}
               >
                 Our commitment is to execute coating projects using technically suitable,
                 compatible and properly specified coating systems, rather than selecting products
@@ -203,7 +203,7 @@ export default function CoatingSystemApproach() {
                   <span
                     className="flex-shrink-0 fw-700 alt-font"
                     style={{
-                      color:         "#0182EE",
+                      color:         "#879477",
                       fontSize:      "13px",
                       letterSpacing: "0.08em",
                       minWidth:      "28px",

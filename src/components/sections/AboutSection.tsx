@@ -15,7 +15,7 @@ export default function AboutSection() {
               Industrial coating specialists for demanding environments.
             </h3>
             <p className="w-80 md-w-100 mb-40px" data-anime='{ "el": "lines", "translateY": [30,0], "opacity": [0,1], "delay": 200, "duration": 600, "staggervalue": 100, "easing": "easeOutQuad" }'>
-              Forte Technologies is a Bangalore-based industrial coating company delivering high-performance protective coating solutions. Our certified applicators bring deep expertise in anticorrosive, thermal, fireproofing and floor coating systems - ensuring your assets are protected and your operations continue uninterrupted.
+              Forte Technologies is an industrial coating company delivering high-performance protective coating solutions. Our certified applicators bring deep expertise in anticorrosive, thermal, fireproofing and floor coating systems - ensuring your assets are protected and your operations continue uninterrupted.
             </p>
             <div className="d-inline-block w-100" data-anime='{ "el": "childs", "translateY": [50,0], "opacity": [0,1], "delay": 300, "duration": 600, "staggervalue": 300, "easing": "easeOutQuad" }'>
               <a href="/about" className="btn btn-small btn-double-border btn-border-base-color me-25px xs-me-15px">
@@ -26,7 +26,7 @@ export default function AboutSection() {
               </a>
               <div className="fw-500 d-inline-block align-middle text-dark-gray fs-18 xs-mt-20px xs-mb-20px">
                 <Phone size={16} strokeWidth={1.5} style={{ display: "inline", verticalAlign: "middle" }} className="me-10px" />
-                <a href="tel:+916364227475">+91 6364 227475</a>
+                <a href="tel:+917899298718">+91 78992 98718</a>
               </div>
             </div>
           </div>
@@ -43,14 +43,10 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-md-4 row-cols-sm-2 text-center forte-stats-row" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
+        <div className="row row-cols-1 row-cols-md-3 row-cols-sm-3 text-center justify-content-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 300, "staggervalue": 300, "easing": "easeOutQuad" }'>
           <div className="col last-paragraph-no-margin sm-mb-30px">
             <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={6} suffix="+" /></h2>
             <p className="text-dark-gray lh-28">Years active</p>
-          </div>
-          <div className="col last-paragraph-no-margin sm-mb-30px">
-            <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={5} /></h2>
-            <p className="text-dark-gray lh-28">Approved brands</p>
           </div>
           <div className="col last-paragraph-no-margin xs-mb-30px">
             <h2 className="fw-600 ls-minus-3px text-dark-gray m-0"><StatCounter value={100} suffix="%" /></h2>

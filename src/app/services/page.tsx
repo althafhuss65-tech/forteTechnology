@@ -7,7 +7,7 @@ import { Icon } from "@/components/ui/Icon";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Forte Technologies offers protective & anticorrosive coatings, industrial coatings, industrial floor coatings and industrial refurbishment & project execution services across Bangalore and South India.",
+    "Forte Technologies offers protective & anticorrosive coatings, industrial coatings, industrial floor coatings and industrial refurbishment & project execution services across South India.",
 };
 
 const PROTECTIVE_ANTICORROSIVE = [
@@ -170,17 +170,11 @@ export default function ServicesPage() {
             <div className="row align-items-center justify-content-center">
               <div className="col-12 text-center position-relative page-title-extra-large">
                 <div className="d-flex flex-column extra-small-screen">
-                  <div className="mt-auto">
+                  <div className="my-auto">
                     <h1
                       className="text-white alt-font mb-0 text-shadow-extra-large fw-400 ls-minus-1px"
                       data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "filter": ["blur(20px)","blur(0px)"], "string": ["Our services"], "duration": 500, "delay": 0, "speed": 50, "easing": "easeOutQuad" }'
                     ></h1>
-                  </div>
-                  <div className="mt-auto justify-content-center breadcrumb breadcrumb-style-01 text-white">
-                    <ul data-anime='{ "el": "childs", "translateY": [50,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                      <li><a href="/" className="text-white">Home</a></li>
-                      <li>Services</li>
-                    </ul>
                   </div>
                 </div>
               </div>

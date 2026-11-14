@@ -40,7 +40,7 @@ export async function sendEnquiryEmail(data: {
           <p style="margin:0;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
         </div>
         <div style="background:#f9fafb;padding:16px 32px;text-align:center;color:#9ca3af;font-size:13px;">
-          Forte Technologies · info@fortetechnologies.in · +91 6364227475
+          Forte Technologies · info@fortetechnologies.in · +91 7899298718
         </div>
       </div>
     `,

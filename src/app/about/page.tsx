@@ -9,7 +9,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Forte Technologies - a Bangalore-based industrial coating company established in 2020, specialising in protective coatings, industrial coatings and floor coatings.",
+    "Learn about Forte Technologies - an industrial coating company established in 2020, specialising in protective coatings, industrial coatings and floor coatings.",
 };
 
 const QUALITY_ITEMS = [
@@ -39,17 +39,11 @@ export default function AboutPage() {
             <div className="row align-items-center justify-content-center">
               <div className="col-12 text-center position-relative page-title-extra-large">
                 <div className="d-flex flex-column extra-small-screen">
-                  <div className="mt-auto">
+                  <div className="my-auto">
                     <h1
                       className="text-white alt-font mb-0 text-shadow-extra-large fw-400 ls-minus-1px"
                       data-fancy-text='{ "opacity": [0,1], "translateY": [50,0], "filter": ["blur(20px)","blur(0px)"], "string": ["About us"], "duration": 500, "delay": 0, "speed": 50, "easing": "easeOutQuad" }'
                     ></h1>
-                  </div>
-                  <div className="mt-auto justify-content-center breadcrumb breadcrumb-style-01 text-white">
-                    <ul data-anime='{ "el": "childs", "translateY": [50,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                      <li><a href="/" className="text-white">Home</a></li>
-                      <li>About</li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -69,11 +63,11 @@ export default function AboutPage() {
               <div className="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateX": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <Image className="mb-40px border-radius-6px w-100" src="/images/forte/blueprints.jpg" alt="Project planning on site" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 50vw" />
                 <p className="w-90 mb-35px lg-w-100">
-                  Forte Technologies is a Bangalore-based industrial coating company delivering high-performance protective coating solutions. Our certified applicators bring deep expertise in <span className="text-dark-gray fw-500">anticorrosive, thermal, fireproofing and floor coating systems</span> - ensuring your assets are protected and your operations continue uninterrupted.
+                  Forte Technologies is an industrial coating company delivering high-performance protective coating solutions. Our certified applicators bring deep expertise in <span className="text-dark-gray fw-500">anticorrosive, thermal, fireproofing and floor coating systems</span> - ensuring your assets are protected and your operations continue uninterrupted.
                 </p>
                 <div className="d-block d-md-flex align-items-center border-top border-color-light-gray pt-25px sm-pt-35px">
                   <div className="col-auto text-center sm-mb-15px">
-                    <h2 className="fw-600 ls-minus-2px mb-0 alt-font" style={{ color: "#0182EE" }}>6+</h2>
+                    <h2 className="fw-600 ls-minus-2px mb-0 alt-font text-dark-gray">6+</h2>
                   </div>
                   <div className="col text-center text-md-start ps-20px sm-ps-0">
                     <div className="fs-20">
@@ -144,7 +138,7 @@ export default function AboutPage() {
                 <div key={item.text} className="col icon-with-text-style-03 border-end border-color-light-gray md-mb-30px xs-border-end-0">
                   <div className="feature-box ps-4 pe-4">
                     <div className="feature-box-icon mb-15px">
-                      <Icon name={item.icon} size={40} />
+                      <Icon name={item.icon} size={40} color="#ffffff" />
                     </div>
                     <div className="feature-box-content last-paragraph-no-margin">
                       <p className="text-dark-gray fw-500 lh-26 mb-0">{item.text}</p>

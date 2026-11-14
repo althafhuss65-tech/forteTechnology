@@ -21,7 +21,7 @@ const STEPS = [
   },
 ];
 
-const BRANDS = ["AkzoNobel", "International", "GEM Paints", "Jotun", "Berger", "Asian Paints"];
+const BRANDS = ["AkzoNobel", "International", "GEM Paints", "Jotun", "Berger", "Asian Paints PPG", "Nippon Paints"];
 
 export default function ProcessBand() {
   return (
@@ -52,21 +52,17 @@ export default function ProcessBand() {
         <div className="border-top border-color-light-gray" style={{ margin: "48px 0 40px" }} />
 
         {/* Brand partners */}
-        <div className="row align-items-center" data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 200, "staggervalue": 80, "easing": "easeOutQuad" }'>
-          <div className="col-lg-4 col-12 mb-20px mb-lg-0">
-            <span className="fs-12 fw-500 text-medium-gray d-block">
-              Approved applicators for leading coating manufacturers
-            </span>
-          </div>
-          <div className="col-lg-8 col-12">
-            <div className="d-flex justify-content-lg-end flex-nowrap">
-              {BRANDS.map((name, i) => (
-                <span key={name} className="forte-brand-name alt-font fw-500"
-                  style={{ padding: "4px 13px", borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.1)" : "none", whiteSpace: "nowrap" }}>
-                  {name}
-                </span>
-              ))}
-            </div>
+        <div data-anime='{ "el": "childs", "opacity": [0,1], "duration": 600, "delay": 200, "staggervalue": 80, "easing": "easeOutQuad" }'>
+          <span className="fs-12 fw-500 text-medium-gray d-block mb-15px text-center">
+            Approved applicators for leading coating manufacturers
+          </span>
+          <div className="d-flex flex-wrap justify-content-center">
+            {BRANDS.map((name, i) => (
+              <span key={name} className="forte-brand-name alt-font fw-500"
+                style={{ padding: "4px 13px", borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.1)" : "none", whiteSpace: "nowrap" }}>
+                {name}
+              </span>
+            ))}
           </div>
         </div>
 

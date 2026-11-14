@@ -27,7 +27,7 @@ export default function Header() {
       <nav className={`sr-nav${scrolled ? " sr-nav-scrolled" : ""}`}>
         {/* Left: Logo */}
         <Link href="/" className="sr-nav-brand">
-          <Image src="/forte-logo-white.png" alt="Forte Technologies" height={38} width={152} style={{ width: "auto", height: "38px" }} priority />
+          <Image src="/forte-logo-off-white-2.png" alt="Forte Technologies" height={56} width={224} style={{ width: "auto", height: "56px" }} priority />
         </Link>
 
         {/* Center: Frosted-glass pill with all nav links */}
