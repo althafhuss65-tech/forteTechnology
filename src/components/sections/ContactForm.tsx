@@ -50,7 +50,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-10">
-        <CheckCircle2 size={64} color="#1565C0" strokeWidth={1.5} style={{ display: "block", margin: "0 auto 20px" }} />
+        <CheckCircle2 size={64} color="#354B35" strokeWidth={1.5} style={{ display: "block", margin: "0 auto 20px" }} />
         <h4 className="alt-font text-dark-gray mb-10px">Enquiry Sent!</h4>
         <p className="w-60 mx-auto md-w-100">Thank you for reaching out. Our team will review your enquiry and respond as soon as possible.</p>
         <button

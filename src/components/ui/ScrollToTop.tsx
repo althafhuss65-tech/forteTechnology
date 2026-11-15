@@ -23,20 +23,20 @@ export default function ScrollToTop() {
         width: "44px",
         height: "44px",
         borderRadius: "50%",
-        backgroundColor: "#1565C0",
+        backgroundColor: "#354B35",
         border: "none",
         cursor: "pointer",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        boxShadow: "0 4px 16px rgba(21,101,192,0.4)",
+        boxShadow: "0 4px 16px rgba(53,75,53,0.4)",
         transition: "opacity 0.3s, transform 0.3s",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(16px)",
         pointerEvents: visible ? "auto" : "none",
       }}
       onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#1A1A2E")}
-      onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#1565C0")}
+      onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#354B35")}
     >
       <ArrowUp size={20} color="white" strokeWidth={2} />
     </button>

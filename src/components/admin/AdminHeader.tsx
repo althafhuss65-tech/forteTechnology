@@ -13,7 +13,7 @@ export default function AdminHeader({ user }: Props) {
       <div />
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 text-sm text-[#374151]">
-          <div className="w-8 h-8 bg-[#1565C0] rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#354B35] rounded-full flex items-center justify-center">
             <User size={14} className="text-white" />
           </div>
           <span className="font-medium hidden sm:block">{user?.name || user?.email}</span>

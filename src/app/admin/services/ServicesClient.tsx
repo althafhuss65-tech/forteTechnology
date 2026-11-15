@@ -76,10 +76,10 @@ export default function ServicesClient({ initialServices }: Props) {
   };
 
   const inputClass =
-    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#1565C0]";
+    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#354B35]";
 
   const FormPanel = (
-    <div className="bg-white rounded-xl border border-[#1565C0] shadow-sm p-6 mb-5">
+    <div className="bg-white rounded-xl border border-[#354B35] shadow-sm p-6 mb-5">
       <h3 className="font-semibold text-[#1A1A2E] mb-4">
         {editing ? "Edit Service" : "Add New Service"}
       </h3>
@@ -140,7 +140,7 @@ export default function ServicesClient({ initialServices }: Props) {
             type="checkbox"
             checked={form.isPublished}
             onChange={(e) => setForm((p) => ({ ...p, isPublished: e.target.checked }))}
-            className="w-4 h-4 accent-[#1565C0]"
+            className="w-4 h-4 accent-[#354B35]"
           />
           <span className="text-sm text-[#374151]">Published (visible on website)</span>
         </label>
@@ -149,7 +149,7 @@ export default function ServicesClient({ initialServices }: Props) {
         <button
           onClick={saveService}
           disabled={saving || !form.title || !form.shortDesc}
-          className="flex items-center gap-2 px-5 py-2 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1] transition-colors disabled:opacity-60"
+          className="flex items-center gap-2 px-5 py-2 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324] transition-colors disabled:opacity-60"
         >
           <Save size={14} />
           {saving ? "Saving..." : "Save Service"}
@@ -175,7 +175,7 @@ export default function ServicesClient({ initialServices }: Props) {
       <div className="flex justify-end mb-5">
         <button
           onClick={() => { setAdding(true); setEditing(null); setForm(EMPTY_FORM); }}
-          className="flex items-center gap-2 px-4 py-2 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1] transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324] transition-colors"
         >
           <Plus size={15} />
           Add Service
@@ -211,13 +211,13 @@ export default function ServicesClient({ initialServices }: Props) {
                   <button
                     onClick={() => togglePublish(service)}
                     title={service.isPublished ? "Hide" : "Show"}
-                    className="p-2 text-gray-400 hover:text-[#1565C0] hover:bg-blue-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-400 hover:text-[#354B35] hover:bg-blue-50 rounded-lg transition-colors"
                   >
                     {service.isPublished ? <EyeOff size={14} /> : <Eye size={14} />}
                   </button>
                   <button
                     onClick={() => startEdit(service)}
-                    className="p-2 text-gray-400 hover:text-[#1565C0] hover:bg-blue-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-400 hover:text-[#354B35] hover:bg-blue-50 rounded-lg transition-colors"
                   >
                     <Pencil size={14} />
                   </button>

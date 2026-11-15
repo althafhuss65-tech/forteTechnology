@@ -50,7 +50,7 @@ export default function PagesClient({ pages }: Props) {
   };
 
   const inputClass =
-    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#1565C0]";
+    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#354B35]";
 
   return (
     <div className="space-y-5 max-w-2xl">
@@ -67,7 +67,7 @@ export default function PagesClient({ pages }: Props) {
                 href={page.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#1565C0] transition-colors"
+                className="text-gray-400 hover:text-[#354B35] transition-colors"
               >
                 <ExternalLink size={14} />
               </a>
@@ -105,7 +105,7 @@ export default function PagesClient({ pages }: Props) {
               <button
                 onClick={() => save(page.slug)}
                 disabled={saving === page.slug}
-                className="flex items-center gap-2 px-5 py-2 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1] transition-colors disabled:opacity-60"
+                className="flex items-center gap-2 px-5 py-2 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324] transition-colors disabled:opacity-60"
               >
                 {saved === page.slug ? (
                   <><CheckCircle size={14} /> Saved!</>

@@ -60,7 +60,7 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search enquiries..."
-              className="w-full pl-8 pr-3 py-2 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#1565C0]"
+              className="w-full pl-8 pr-3 py-2 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#354B35]"
             />
           </div>
           <div className="flex gap-1">
@@ -70,7 +70,7 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
                 onClick={() => setFilter(f)}
                 className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-colors capitalize ${
                   filter === f
-                    ? "bg-[#1565C0] text-white"
+                    ? "bg-[#354B35] text-white"
                     : "text-gray-500 hover:bg-gray-100"
                 }`}
               >
@@ -95,7 +95,7 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
               >
                 <div className="flex items-start gap-2">
                   {!enq.isRead && (
-                    <div className="w-2 h-2 rounded-full bg-[#1565C0] mt-1.5 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-[#354B35] mt-1.5 flex-shrink-0" />
                   )}
                   <div className={`min-w-0 flex-1 ${enq.isRead ? "ml-4" : ""}`}>
                     <div className="flex items-center justify-between gap-2">
@@ -135,14 +135,14 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
                 <div className="flex flex-wrap gap-3 mt-1">
                   <a
                     href={`mailto:${selected.email}`}
-                    className="text-sm text-[#1565C0] hover:underline"
+                    className="text-sm text-[#354B35] hover:underline"
                   >
                     {selected.email}
                   </a>
                   {selected.phone && (
                     <a
                       href={`tel:${selected.phone}`}
-                      className="text-sm text-[#1565C0] hover:underline"
+                      className="text-sm text-[#354B35] hover:underline"
                     >
                       {selected.phone}
                     </a>
@@ -154,7 +154,7 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
                 {selected.isRead ? (
                   <button
                     title="Mark unread"
-                    className="p-2 text-gray-400 hover:text-[#1565C0] hover:bg-blue-50 rounded-lg transition-colors"
+                    className="p-2 text-gray-400 hover:text-[#354B35] hover:bg-blue-50 rounded-lg transition-colors"
                   >
                     <Mail size={16} />
                   </button>
@@ -198,7 +198,7 @@ export default function EnquiriesClient({ initialEnquiries }: Props) {
             {/* Reply button */}
             <a
               href={`mailto:${selected.email}?subject=Re: ${selected.subject || "Your Enquiry"}`}
-              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1] transition-colors"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324] transition-colors"
             >
               <Mail size={14} />
               Reply via Email

@@ -53,7 +53,7 @@ export default function AdminSidebar() {
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 text-sm font-medium transition-colors",
                 active
-                  ? "bg-[#1565C0] text-white"
+                  ? "bg-[#354B35] text-white"
                   : "text-gray-400 hover:text-white hover:bg-white/5"
               )}
             >

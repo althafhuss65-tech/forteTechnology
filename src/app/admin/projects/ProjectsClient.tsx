@@ -74,10 +74,10 @@ export default function ProjectsClient({ initialProjects }: Props) {
   };
 
   const inputClass =
-    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#1565C0]";
+    "w-full px-3 py-2.5 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#354B35]";
 
   const FormPanel = (
-    <div className="bg-white rounded-xl border border-[#1565C0] shadow-sm p-6 mb-5">
+    <div className="bg-white rounded-xl border border-[#354B35] shadow-sm p-6 mb-5">
       <h3 className="font-semibold text-[#1A1A2E] mb-4">
         {editing ? "Edit Project" : "Add New Project"}
       </h3>
@@ -101,12 +101,12 @@ export default function ProjectsClient({ initialProjects }: Props) {
           </div>
         </div>
         <label className="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" checked={form.isPublished} onChange={(e) => setForm((p) => ({ ...p, isPublished: e.target.checked }))} className="w-4 h-4 accent-[#1565C0]" />
+          <input type="checkbox" checked={form.isPublished} onChange={(e) => setForm((p) => ({ ...p, isPublished: e.target.checked }))} className="w-4 h-4 accent-[#354B35]" />
           <span className="text-sm text-[#374151]">Published (visible on homepage)</span>
         </label>
       </div>
       <div className="flex gap-3 mt-5">
-        <button onClick={save} disabled={saving || !form.title || !form.description} className="flex items-center gap-2 px-5 py-2 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1] disabled:opacity-60">
+        <button onClick={save} disabled={saving || !form.title || !form.description} className="flex items-center gap-2 px-5 py-2 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324] disabled:opacity-60">
           <Save size={14} />
           {saving ? "Saving..." : "Save Project"}
         </button>
@@ -121,7 +121,7 @@ export default function ProjectsClient({ initialProjects }: Props) {
   return (
     <div>
       <div className="flex justify-end mb-5">
-        <button onClick={() => { setAdding(true); setEditing(null); setForm(EMPTY_FORM); }} className="flex items-center gap-2 px-4 py-2 bg-[#1565C0] text-white font-semibold rounded-lg text-sm hover:bg-[#0D47A1]">
+        <button onClick={() => { setAdding(true); setEditing(null); setForm(EMPTY_FORM); }} className="flex items-center gap-2 px-4 py-2 bg-[#354B35] text-white font-semibold rounded-lg text-sm hover:bg-[#243324]">
           <Plus size={15} />
           Add Project
         </button>
@@ -139,7 +139,7 @@ export default function ProjectsClient({ initialProjects }: Props) {
                   <div className="flex items-center gap-2 mb-1">
                     <h3 className="font-semibold text-[#1A1A2E] text-sm">{project.title}</h3>
                     {project.category && (
-                      <span className="text-[10px] bg-blue-50 text-[#1565C0] font-semibold px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] bg-blue-50 text-[#354B35] font-semibold px-2 py-0.5 rounded-full">
                         {project.category}
                       </span>
                     )}
@@ -152,10 +152,10 @@ export default function ProjectsClient({ initialProjects }: Props) {
                   <p className="text-xs text-[#374151] line-clamp-2">{project.description}</p>
                 </div>
                 <div className="flex gap-1.5 flex-shrink-0">
-                  <button onClick={() => togglePublish(project)} className="p-2 text-gray-400 hover:text-[#1565C0] hover:bg-blue-50 rounded-lg transition-colors">
+                  <button onClick={() => togglePublish(project)} className="p-2 text-gray-400 hover:text-[#354B35] hover:bg-blue-50 rounded-lg transition-colors">
                     {project.isPublished ? <EyeOff size={14} /> : <Eye size={14} />}
                   </button>
-                  <button onClick={() => startEdit(project)} className="p-2 text-gray-400 hover:text-[#1565C0] hover:bg-blue-50 rounded-lg transition-colors">
+                  <button onClick={() => startEdit(project)} className="p-2 text-gray-400 hover:text-[#354B35] hover:bg-blue-50 rounded-lg transition-colors">
                     <Pencil size={14} />
                   </button>
                   <button onClick={() => deleteProject(project.id)} className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">

@@ -70,7 +70,7 @@ export default function AdminLogin() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@fortetechnologies.in"
                   required
-                  className="w-full pl-9 pr-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#1565C0] focus:ring-1 focus:ring-[#1565C0] transition-colors"
+                  className="w-full pl-9 pr-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35] transition-colors"
                 />
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function AdminLogin() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full pl-9 pr-10 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#1565C0] focus:ring-1 focus:ring-[#1565C0] transition-colors"
+                  className="w-full pl-9 pr-10 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35] transition-colors"
                 />
                 <button
                   type="button"
@@ -112,7 +112,7 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-[#1565C0] text-white font-semibold rounded-lg hover:bg-[#0D47A1] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3 bg-[#354B35] text-white font-semibold rounded-lg hover:bg-[#243324] transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading ? (
                 <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />

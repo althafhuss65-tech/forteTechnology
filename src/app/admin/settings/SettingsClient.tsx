@@ -90,7 +90,7 @@ export default function SettingsClient({ settings: initial }: Props) {
                     }
                     rows={3}
                     placeholder={field.placeholder}
-                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] placeholder-gray-400 focus:outline-none focus:border-[#1565C0] focus:ring-1 focus:ring-[#1565C0] resize-none"
+                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] placeholder-gray-400 focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35] resize-none"
                   />
                 ) : (
                   <input
@@ -100,7 +100,7 @@ export default function SettingsClient({ settings: initial }: Props) {
                       setValues((prev) => ({ ...prev, [field.key]: e.target.value }))
                     }
                     placeholder={field.placeholder}
-                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] placeholder-gray-400 focus:outline-none focus:border-[#1565C0] focus:ring-1 focus:ring-[#1565C0]"
+                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] placeholder-gray-400 focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35]"
                   />
                 )}
               </div>
@@ -118,7 +118,7 @@ export default function SettingsClient({ settings: initial }: Props) {
       <button
         onClick={handleSave}
         disabled={saving}
-        className="flex items-center gap-2 px-6 py-3 bg-[#1565C0] text-white font-semibold rounded-lg hover:bg-[#0D47A1] transition-colors disabled:opacity-60"
+        className="flex items-center gap-2 px-6 py-3 bg-[#354B35] text-white font-semibold rounded-lg hover:bg-[#243324] transition-colors disabled:opacity-60"
       >
         {saved ? (
           <>

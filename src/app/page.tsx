@@ -21,7 +21,7 @@ export default function ComingSoon() {
             justifyContent: "center",
             width: "64px",
             height: "64px",
-            background: "#1565C0",
+            background: "#354B35",
             borderRadius: "12px",
             marginBottom: "2rem",
           }}
@@ -59,7 +59,7 @@ export default function ComingSoon() {
           style={{
             width: "40px",
             height: "2px",
-            background: "#1565C0",
+            background: "#354B35",
             margin: "0 auto 2.5rem",
           }}
         />
@@ -79,7 +79,7 @@ export default function ComingSoon() {
           href="mailto:info@fortetechnologies.in"
           style={{
             display: "inline-block",
-            background: "#1565C0",
+            background: "#354B35",
             color: "#fff",
             padding: "0.75rem 1.75rem",
             borderRadius: "8px",

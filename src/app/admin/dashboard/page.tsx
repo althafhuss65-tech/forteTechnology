@@ -27,7 +27,7 @@ export default async function DashboardPage() {
       value: totalEnquiries,
       sub: `${unreadEnquiries} unread`,
       icon: MessageSquare,
-      color: "bg-blue-50 text-[#1565C0]",
+      color: "bg-blue-50 text-[#354B35]",
     },
     {
       label: "Services Listed",
@@ -87,7 +87,7 @@ export default async function DashboardPage() {
       <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm">
         <div className="px-6 py-4 border-b border-[#E5E7EB] flex items-center justify-between">
           <h2 className="font-semibold text-[#1A1A2E]">Recent Enquiries</h2>
-          <a href="/admin/enquiries" className="text-sm text-[#1565C0] font-medium hover:underline">
+          <a href="/admin/enquiries" className="text-sm text-[#354B35] font-medium hover:underline">
             View all →
           </a>
         </div>
@@ -101,7 +101,7 @@ export default async function DashboardPage() {
               <div key={enq.id} className="px-6 py-4 flex items-start justify-between gap-4">
                 <div className="flex items-start gap-3 min-w-0">
                   {!enq.isRead && (
-                    <div className="w-2 h-2 rounded-full bg-[#1565C0] mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-[#354B35] mt-2 flex-shrink-0" />
                   )}
                   <div className={enq.isRead ? "ml-5 min-w-0" : "min-w-0"}>
                     <p className="font-medium text-sm text-[#1A1A2E] truncate">{enq.name}</p>
