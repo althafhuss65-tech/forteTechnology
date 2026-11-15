@@ -56,14 +56,26 @@ export default function AboutPage() {
           <div className="container">
             <div className="row">
               <div className="col-lg-5" data-anime='{ "el": "childs", "translateX": [-30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">About Forte Technologies</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray mb-12 md-mb-50px sm-mb-30px">Industrial coating specialists delivering performance-driven solutions since 2020.</h3>
+                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">About FORTE Technologies</span>
+                <h3 className="alt-font ls-minus-1px text-dark-gray mb-12 md-mb-50px sm-mb-30px">A family-owned industrial coating company established in 2020.</h3>
                 <Image src="/images/forte/surface-prep.jpg" className="border-radius-6px mb-20px w-100" alt="Surface preparation on industrial substrate" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 40vw" />
               </div>
               <div className="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateX": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <Image className="mb-40px border-radius-6px w-100" src="/images/forte/blueprints.jpg" alt="Project planning on site" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 50vw" />
+                <p className="w-90 mb-20px lg-w-100">
+                  FORTE Technologies is a family-owned industrial coating company established in 2020, specialising in protective coatings, industrial coatings, industrial floor coatings and industrial refurbishment.
+                </p>
+                <p className="w-90 mb-20px lg-w-100">
+                  We work with industrial and commercial clients to protect assets, restore deteriorated surfaces and improve long-term performance through technically suitable coating systems.
+                </p>
+                <p className="w-90 mb-20px lg-w-100">
+                  Our approach combines coating material knowledge, manufacturer recommendations, specialist application resources and coordinated project execution.
+                </p>
+                <p className="w-90 mb-20px lg-w-100">
+                  By working with leading industrial coating manufacturers and experienced application partners, we bring together the appropriate technical solutions and resources to meet individual project requirements.
+                </p>
                 <p className="w-90 mb-35px lg-w-100">
-                  Forte Technologies is an industrial coating company delivering high-performance protective coating solutions. Our certified applicators bring deep expertise in <span className="text-dark-gray fw-500">anticorrosive, thermal, fireproofing and floor coating systems</span> - ensuring your assets are protected and your operations continue uninterrupted.
+                  Our focus is simple: the right coating system, proper preparation and disciplined execution.
                 </p>
                 <div className="d-block d-md-flex align-items-center border-top border-color-light-gray pt-25px sm-pt-35px">
                   <div className="col-auto text-center sm-mb-15px">

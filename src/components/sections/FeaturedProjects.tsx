@@ -11,9 +11,9 @@ const STATIC_PROJECTS = [
   },
   {
     num: "02",
-    category: "Industrial Coating",
-    title: "Structural Steel Epoxy Coating",
-    desc: "High-solid self-priming epoxy on structural steel using the GEM Paints GEMCAP EPOXY system for superior adhesion and long-term corrosion protection.",
+    category: "Industrial Refurbishment",
+    title: "Industrial Structure Refurbishment",
+    desc: "Full-scope recoating and surface restoration of aged industrial structures, returning deteriorated assets to serviceable condition with appropriate coating systems.",
     img: "/images/forte/steel-primer.jpg",
   },
   {
@@ -25,9 +25,9 @@ const STATIC_PROJECTS = [
   },
   {
     num: "04",
-    category: "Architectural Coating",
-    title: "Architectural Metal Finish",
-    desc: "Surface preparation to St 2 standard with International Interseal 670 HS primer and Interthane 990 finish on architectural metal structures.",
+    category: "Industrial Refurbishment",
+    title: "Surface Restoration & Recoating",
+    desc: "Blasting, preparation and recoating of deteriorated surfaces on industrial equipment and structures to restore protection and extend asset service life.",
     img: "/images/forte/rope-access.jpg",
   },
 ];
