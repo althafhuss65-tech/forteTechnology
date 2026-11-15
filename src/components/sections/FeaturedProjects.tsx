@@ -43,7 +43,6 @@ export default async function FeaturedProjects() {
       const dbProjects = await prisma.project.findMany({
         where: { isPublished: true },
         orderBy: { orderIndex: "asc" },
-        take: 4,
       });
       if (dbProjects.length > 0) {
         projects = dbProjects.map((p: typeof dbProjects[0], i: number) => ({

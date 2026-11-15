@@ -1,10 +1,11 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactCTA from "@/components/sections/ContactCTA";
 import { Icon } from "@/components/ui/Icon";
 import { Eye, Target, Star } from "lucide-react";
 import Image from "next/image";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -12,18 +13,88 @@ export const metadata: Metadata = {
     "Learn about Forte Technologies - an industrial coating company established in 2020, specialising in protective coatings, industrial coatings and floor coatings.",
 };
 
+const dbReady = () => {
+  const url = process.env.DATABASE_URL ?? "";
+  return url.length > 0 && !url.includes("username") && !url.includes("xxx");
+};
+
 const QUALITY_ITEMS = [
   { icon: "check-circle", text: "Workmanship excellence" },
-  { icon: "file-check", text: "Material compliance" },
-  { icon: "list-checks", text: "Application procedures" },
-  { icon: "folder", text: "Project documentation" },
-  { icon: "search", text: "Technical supervision" },
-  { icon: "refresh", text: "Continuous improvement" },
-  { icon: "hard-hat", text: "Responsible execution" },
-  { icon: "star", text: "Attention to detail" },
+  { icon: "file-check",   text: "Material compliance" },
+  { icon: "list-checks",  text: "Application procedures" },
+  { icon: "folder",       text: "Project documentation" },
+  { icon: "search",       text: "Technical supervision" },
+  { icon: "refresh",      text: "Continuous improvement" },
+  { icon: "hard-hat",     text: "Responsible execution" },
+  { icon: "star",         text: "Attention to detail" },
 ];
 
-export default function AboutPage() {
+type AboutMainContent    = { eyebrow?: string; heading?: string; paragraphs?: string[]; yearsValue?: string; yearsLabel?: string };
+type AboutVMContent      = { eyebrow?: string; heading?: string; visionTitle?: string; visionText?: string; missionTitle?: string; missionText?: string };
+type AboutQualityContent = { eyebrow?: string; heading?: string; body?: string };
+type AboutSafetyContent  = { eyebrow?: string; heading?: string; body1?: string; body2?: string };
+
+const D_MAIN = {
+  eyebrow: "About FORTE Technologies",
+  heading: "A family-owned industrial coating company established in 2020.",
+  paragraphs: [
+    "FORTE Technologies is a family-owned industrial coating company established in 2020, specialising in protective coatings, industrial coatings, industrial floor coatings and industrial refurbishment.",
+    "We work with industrial and commercial clients to protect assets, restore deteriorated surfaces and improve long-term performance through technically suitable coating systems.",
+    "Our approach combines coating material knowledge, manufacturer recommendations, specialist application resources and coordinated project execution.",
+    "By working with leading industrial coating manufacturers and experienced application partners, we bring together the appropriate technical solutions and resources to meet individual project requirements.",
+    "Our focus is simple: the right coating system, proper preparation and disciplined execution.",
+  ],
+  yearsValue: "6+",
+  yearsLabel: "Years of industry experience",
+};
+
+const D_VM = {
+  eyebrow: "Our purpose",
+  heading: "Vision and mission guiding every project we take on.",
+  visionTitle: "Our Vision",
+  visionText: "To be a trusted name in protective and industrial coating solutions, recognised for quality, reliability and lasting performance.",
+  missionTitle: "Our Mission",
+  missionText: "To deliver practical, performance-driven coating solutions through technical expertise, quality workmanship, safe execution and strong customer relationships.",
+};
+
+const D_QUALITY = {
+  eyebrow: "Quality commitment",
+  heading: "Quality in every layer. Confidence in every project.",
+  body: "At Forte Technologies, quality is fundamental to every project we undertake. We are committed to delivering coating and flooring solutions that meet agreed specifications, customer requirements and applicable industry standards.",
+};
+
+const D_SAFETY = {
+  eyebrow: "Safety",
+  heading: "Dedicated to a safe working environment.",
+  body1: "Forte Technologies is dedicated to protecting and preserving the working environment in a responsible manner. Any successful project is directly attributed to exceptional performance and well-planned services - and safety is non-negotiable at every stage.",
+  body2: "We acknowledge that our staff and professionals are our biggest asset. We will never compromise the safety of our team, equipment or clients.",
+};
+
+export default async function AboutPage() {
+  let mainContent:    AboutMainContent    = {};
+  let vmContent:      AboutVMContent      = {};
+  let qualityContent: AboutQualityContent = {};
+  let safetyContent:  AboutSafetyContent  = {};
+
+  if (dbReady()) {
+    try {
+      const rows = await prisma.pageSection.findMany({ where: { pageSlug: "about" } });
+      for (const r of rows) {
+        if (r.sectionType === "about-main")           mainContent    = r.content as AboutMainContent;
+        if (r.sectionType === "about-vision-mission") vmContent      = r.content as AboutVMContent;
+        if (r.sectionType === "about-quality")        qualityContent = r.content as AboutQualityContent;
+        if (r.sectionType === "about-safety")         safetyContent  = r.content as AboutSafetyContent;
+      }
+    } catch {
+      // fall through to static defaults
+    }
+  }
+
+  const main    = { ...D_MAIN,    ...mainContent,    paragraphs: mainContent.paragraphs ?? D_MAIN.paragraphs };
+  const vm      = { ...D_VM,      ...vmContent };
+  const quality = { ...D_QUALITY, ...qualityContent };
+  const safety  = { ...D_SAFETY,  ...safetyContent };
+
   return (
     <>
       <Header />
@@ -56,30 +127,18 @@ export default function AboutPage() {
           <div className="container">
             <div className="row">
               <div className="col-lg-5" data-anime='{ "el": "childs", "translateX": [-30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">About FORTE Technologies</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray mb-12 md-mb-50px sm-mb-30px">A family-owned industrial coating company established in 2020.</h3>
+                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">{main.eyebrow}</span>
+                <h3 className="alt-font ls-minus-1px text-dark-gray mb-12 md-mb-50px sm-mb-30px">{main.heading}</h3>
                 <Image src="/images/forte/surface-prep.jpg" className="border-radius-6px mb-20px w-100" alt="Surface preparation on industrial substrate" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 40vw" />
               </div>
               <div className="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateX": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <Image className="mb-40px border-radius-6px w-100" src="/images/forte/blueprints.jpg" alt="Project planning on site" width={1200} height={800} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 50vw" />
-                <p className="w-90 mb-20px lg-w-100">
-                  FORTE Technologies is a family-owned industrial coating company established in 2020, specialising in protective coatings, industrial coatings, industrial floor coatings and industrial refurbishment.
-                </p>
-                <p className="w-90 mb-20px lg-w-100">
-                  We work with industrial and commercial clients to protect assets, restore deteriorated surfaces and improve long-term performance through technically suitable coating systems.
-                </p>
-                <p className="w-90 mb-20px lg-w-100">
-                  Our approach combines coating material knowledge, manufacturer recommendations, specialist application resources and coordinated project execution.
-                </p>
-                <p className="w-90 mb-20px lg-w-100">
-                  By working with leading industrial coating manufacturers and experienced application partners, we bring together the appropriate technical solutions and resources to meet individual project requirements.
-                </p>
-                <p className="w-90 mb-35px lg-w-100">
-                  Our focus is simple: the right coating system, proper preparation and disciplined execution.
-                </p>
+                {main.paragraphs.map((para, i) => (
+                  <p key={i} className="w-90 mb-20px lg-w-100">{para}</p>
+                ))}
                 <div className="d-block d-md-flex align-items-center border-top border-color-light-gray pt-25px sm-pt-35px">
                   <div className="col-auto text-center sm-mb-15px">
-                    <h2 className="fw-600 ls-minus-2px mb-0 alt-font text-dark-gray">6+</h2>
+                    <h2 className="fw-600 ls-minus-2px mb-0 alt-font text-dark-gray">{main.yearsValue}</h2>
                   </div>
                   <div className="col text-center text-md-start ps-20px sm-ps-0">
                     <div className="fs-20">
@@ -90,7 +149,7 @@ export default function AboutPage() {
                         <Star size={14} fill="white" color="white" strokeWidth={0} style={{ display: "inline", verticalAlign: "middle" }} />
                         <Star size={14} fill="white" color="white" strokeWidth={0} style={{ display: "inline", verticalAlign: "middle" }} />
                       </div>
-                      <span className="text-dark-gray fw-500 d-block d-md-inline-block sm-mt-10px">Years of industry experience</span>
+                      <span className="text-dark-gray fw-500 d-block d-md-inline-block sm-mt-10px">{main.yearsLabel}</span>
                     </div>
                   </div>
                 </div>
@@ -104,8 +163,8 @@ export default function AboutPage() {
           <div className="container">
             <div className="row justify-content-center mb-2 pt-7 md-pt-50px">
               <div className="col-lg-6 col-md-8 text-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "delay": 0, "duration": 600, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">Our purpose</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray">Vision and mission guiding every project we take on.</h3>
+                <span className="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">{vm.eyebrow}</span>
+                <h3 className="alt-font ls-minus-1px text-dark-gray">{vm.heading}</h3>
               </div>
             </div>
             <div className="row row-cols-1 row-cols-md-2 g-0 pb-7 md-pb-50px" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -115,8 +174,8 @@ export default function AboutPage() {
                     <Eye size={52} color="#879477" strokeWidth={1.5} />
                   </div>
                   <div className="feature-box-content last-paragraph-no-margin">
-                    <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">Our Vision</span>
-                    <p className="lh-28">To be a trusted name in protective and industrial coating solutions, recognised for quality, reliability and lasting performance.</p>
+                    <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">{vm.visionTitle}</span>
+                    <p className="lh-28">{vm.visionText}</p>
                   </div>
                 </div>
               </div>
@@ -126,8 +185,8 @@ export default function AboutPage() {
                     <Target size={52} color="#879477" strokeWidth={1.5} />
                   </div>
                   <div className="feature-box-content last-paragraph-no-margin">
-                    <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">Our Mission</span>
-                    <p className="lh-28">To deliver practical, performance-driven coating solutions through technical expertise, quality workmanship, safe execution and strong customer relationships.</p>
+                    <span className="d-inline-block text-dark-gray alt-font fs-22 mb-10px">{vm.missionTitle}</span>
+                    <p className="lh-28">{vm.missionText}</p>
                   </div>
                 </div>
               </div>
@@ -140,9 +199,9 @@ export default function AboutPage() {
           <div className="container">
             <div className="row justify-content-center mb-6 md-mb-8">
               <div className="col-xl-7 col-lg-8 col-md-10 text-center" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">Quality commitment</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray">Quality in every layer. Confidence in every project.</h3>
-                <p className="w-90 md-w-100">At Forte Technologies, quality is fundamental to every project we undertake. We are committed to delivering coating and flooring solutions that meet agreed specifications, customer requirements and applicable industry standards.</p>
+                <span className="fs-15 mb-5px text-base-color fw-500 d-block text-uppercase ls-2px">{quality.eyebrow}</span>
+                <h3 className="alt-font ls-minus-1px text-dark-gray">{quality.heading}</h3>
+                <p className="w-90 md-w-100">{quality.body}</p>
               </div>
             </div>
             <div className="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center gy-5" data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
@@ -167,10 +226,10 @@ export default function AboutPage() {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 md-mb-50px sm-mb-30px" data-anime='{ "el": "childs", "translateX": [-30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">Safety</span>
-                <h3 className="alt-font ls-minus-1px text-dark-gray mb-30px">Dedicated to a safe working environment.</h3>
-                <p className="mb-20px">Forte Technologies is dedicated to protecting and preserving the working environment in a responsible manner. Any successful project is directly attributed to exceptional performance and well-planned services - and safety is non-negotiable at every stage.</p>
-                <p className="mb-35px">We acknowledge that our staff and professionals are our biggest asset. We will never compromise the safety of our team, equipment or clients.</p>
+                <span className="fs-15 mb-10px text-base-color fw-500 d-block text-uppercase ls-2px">{safety.eyebrow}</span>
+                <h3 className="alt-font ls-minus-1px text-dark-gray mb-30px">{safety.heading}</h3>
+                <p className="mb-20px">{safety.body1}</p>
+                <p className="mb-35px">{safety.body2}</p>
                 <span className="fs-13 fw-500 text-medium-gray d-block text-uppercase ls-2px mb-20px">Our Internal Safety Programme Includes:</span>
                 <ul className="p-0 list-style-01 fs-18 alt-font">
                   <li className="border-color-light-gray pt-15px pb-15px text-dark-gray">Daily job hazard analysis meetings before every task</li>
@@ -192,4 +251,3 @@ export default function AboutPage() {
     </>
   );
 }
-

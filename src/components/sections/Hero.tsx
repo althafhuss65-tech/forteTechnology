@@ -1,41 +1,44 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-export default function Hero() {
+interface HeroContent {
+  badge?: string;
+  h1?: string;
+  subtitle?: string;
+  cta1?: string;
+  cta2?: string;
+}
+
+const D: Required<HeroContent> = {
+  badge: "Industrial coating specialists",
+  h1: "Protective Coatings Built for Industrial Performance.",
+  subtitle: "Anticorrosive, thermal, fireproofing and floor coating solutions for industrial, commercial and infrastructure projects.",
+  cta1: "Our Services",
+  cta2: "Get a Quote",
+};
+
+export default function Hero({ content }: { content?: HeroContent }) {
+  const c = { ...D, ...content };
+
   return (
     <section className="sr-hero">
-      {/* Text content - floats above the image */}
       <div className="sr-hero-content">
-        {/* Eyebrow pill - blue dot echoes logo colour */}
         <div className="sr-hero-pill">
           <span className="sr-hero-pill-dot" />
-          Industrial coating specialists
+          {c.badge}
         </div>
-
-        {/* Large display headline */}
-        <h1 className="sr-hero-headline">
-          Protective Coatings Built<br />
-          for Industrial Performance.
-        </h1>
-
-        {/* Short description */}
-        <p className="sr-hero-desc">
-          Anticorrosive, thermal, fireproofing and floor coating solutions
-          for industrial, commercial and infrastructure projects.
-        </p>
-
-        {/* CTA row */}
+        <h1 className="sr-hero-headline">{c.h1}</h1>
+        <p className="sr-hero-desc">{c.subtitle}</p>
         <div className="sr-hero-actions">
           <a href="/services" className="sr-hero-btn-primary">
-            Our Services <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
+            {c.cta1} <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
           </a>
           <a href="/contact" className="sr-hero-btn-secondary">
-            Get a Quote <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
+            {c.cta2} <ArrowRight size={14} strokeWidth={2} style={{ display: "inline", verticalAlign: "middle", marginLeft: "6px" }} />
           </a>
         </div>
       </div>
 
-      {/* Full-bleed image - fades into background at top */}
       <div className="sr-hero-image-wrap" aria-hidden="true">
         <div className="sr-hero-image-fade" />
         <Image

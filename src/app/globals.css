@@ -27,13 +27,6 @@ html, body { overflow-x: clip !important; }
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Featured project card — right content panel turns blue on hover */
-.services-box-style-02 .bg-very-light-gray {
-  transition: background-color 0.3s ease;
-}
-.services-box-style-02:hover .bg-very-light-gray {
-  background-color: #CCE5FF !important;
-}
 
 /* Photo zoom inside cover-background containers */
 .services-box-img .cover-background,

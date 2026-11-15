@@ -3,11 +3,17 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactCTA from "@/components/sections/ContactCTA";
 import { Icon } from "@/components/ui/Icon";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Forte Technologies offers protective & anticorrosive coatings, industrial coatings, industrial floor coatings and industrial refurbishment & project execution services across South India.",
+};
+
+const dbReady = () => {
+  const url = process.env.DATABASE_URL ?? "";
+  return url.length > 0 && !url.includes("username") && !url.includes("xxx");
 };
 
 const PROTECTIVE_ANTICORROSIVE = [
@@ -100,6 +106,15 @@ const REFURBISHMENT = [
   },
 ];
 
+type SvcContent = { eyebrow?: string; heading?: string; description?: string };
+
+const D_SVC = {
+  "services-protective":    { eyebrow: "Protective & Anticorrosive", heading: "Protective & Anticorrosive Coatings", description: "Surface preparation, anticorrosive protection, thermal insulation and protective barrier coatings for structures, equipment and industrial assets." },
+  "services-industrial":    { eyebrow: "Industrial", heading: "Industrial Coatings", description: "Specialist coating solutions for industrial equipment, machinery, metal components and structures in demanding operating environments." },
+  "services-floor":         { eyebrow: "Floor Coatings", heading: "Industrial Floor Coatings", description: "Specialised flooring systems selected to meet the functional, operational and performance needs of industrial and commercial facilities." },
+  "services-refurbishment": { eyebrow: "Refurbishment & Execution", heading: "Industrial Refurbishment & Project Execution", description: "End-to-end management of industrial refurbishment and coating projects - from assessment and surface treatment through to quality handover." },
+};
+
 function ServiceSection({
   eyebrow,
   heading,
@@ -154,7 +169,19 @@ function Divider() {
   );
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  let sc: Record<string, SvcContent> = {};
+  if (dbReady()) {
+    try {
+      const rows = await prisma.pageSection.findMany({ where: { pageSlug: "services" } });
+      for (const r of rows) sc[r.sectionType] = r.content as SvcContent;
+    } catch {
+      // fall through to static defaults
+    }
+  }
+
+  const svc = (key: keyof typeof D_SVC) => ({ ...D_SVC[key], ...sc[key] });
+
   return (
     <>
       <Header />
@@ -182,37 +209,13 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <ServiceSection
-          eyebrow="Protective & Anticorrosive"
-          heading="Protective & Anticorrosive Coatings"
-          description="Surface preparation, anticorrosive protection, thermal insulation and protective barrier coatings for structures, equipment and industrial assets."
-          items={PROTECTIVE_ANTICORROSIVE}
-          cols="row-cols-lg-4"
-        />
+        <ServiceSection {...svc("services-protective")} items={PROTECTIVE_ANTICORROSIVE} cols="row-cols-lg-4" />
         <Divider />
-        <ServiceSection
-          eyebrow="Industrial"
-          heading="Industrial Coatings"
-          description="Specialist coating solutions for industrial equipment, machinery, metal components and structures in demanding operating environments."
-          items={INDUSTRIAL}
-          cols="row-cols-lg-2"
-        />
+        <ServiceSection {...svc("services-industrial")} items={INDUSTRIAL} cols="row-cols-lg-2" />
         <Divider />
-        <ServiceSection
-          eyebrow="Floor Coatings"
-          heading="Industrial Floor Coatings"
-          description="Specialised flooring systems selected to meet the functional, operational and performance needs of industrial and commercial facilities."
-          items={FLOOR}
-          cols="row-cols-lg-4"
-        />
+        <ServiceSection {...svc("services-floor")} items={FLOOR} cols="row-cols-lg-4" />
         <Divider />
-        <ServiceSection
-          eyebrow="Refurbishment & Execution"
-          heading="Industrial Refurbishment & Project Execution"
-          description="End-to-end management of industrial refurbishment and coating projects - from assessment and surface treatment through to quality handover."
-          items={REFURBISHMENT}
-          cols="row-cols-lg-2"
-        />
+        <ServiceSection {...svc("services-refurbishment")} items={REFURBISHMENT} cols="row-cols-lg-2" />
 
         <ContactCTA />
       </main>

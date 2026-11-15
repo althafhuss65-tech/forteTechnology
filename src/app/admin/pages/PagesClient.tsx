@@ -55,7 +55,8 @@ export default function PagesClient({ pages }: Props) {
   return (
     <div className="space-y-5 max-w-2xl">
       {pages.map((page) => {
-        const data = seoData[page.slug] || { metaTitle: "", metaDesc: "" };
+        const raw = seoData[page.slug];
+        const data = { metaTitle: raw?.metaTitle ?? "", metaDesc: raw?.metaDesc ?? "" };
         return (
           <div key={page.slug} className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
             <div className="px-6 py-4 border-b border-[#E5E7EB] flex items-center justify-between">

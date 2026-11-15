@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactForm from "@/components/sections/ContactForm";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -10,51 +11,60 @@ export const metadata: Metadata = {
     "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 7899298718 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
 };
 
+const dbReady = () => {
+  const url = process.env.DATABASE_URL ?? "";
+  return url.length > 0 && !url.includes("username") && !url.includes("xxx");
+};
+
+type ContactHeroContent = { line1?: string; line2?: string; subtitle?: string };
+type ContactStepsContent = { heading?: string; steps?: { n: string; title: string; text: string }[] };
+
+const D_HERO: Required<ContactHeroContent> = {
+  line1: "Tell us about your project.",
+  line2: "We'll respond within a day.",
+  subtitle: "Describe your surface, environment and timeline. Our team will assess your requirements and reply with the right coating recommendation.",
+};
+
+const D_STEPS = {
+  heading: "What happens next",
+  steps: [
+    { n: "01", title: "A reply within a day",  text: "From our technical team, with follow-up questions about your project." },
+    { n: "02", title: "A site assessment",     text: "We review the substrate, environment and your specification requirements." },
+    { n: "03", title: "A detailed proposal",   text: "With the right coating system, estimated timeline and fixed project cost." },
+  ],
+};
+
 const CONTACT_ITEMS = [
-  {
-    Icon: Phone,
-    label: "Call us",
-    value: "+91 78992 98718",
-    href: "tel:+917899298718",
-  },
-  {
-    Icon: Mail,
-    label: "Write to us",
-    value: "info@fortetechnologies.in",
-    href: "mailto:info@fortetechnologies.in",
-  },
-  {
-    Icon: Clock,
-    label: "Working hours",
-    value: "Mon – Sat, 9 am – 6 pm",
-    href: null,
-  },
+  { Icon: Phone, label: "Call us",        value: "+91 78992 98718",          href: "tel:+917899298718" },
+  { Icon: Mail,  label: "Write to us",    value: "info@fortetechnologies.in", href: "mailto:info@fortetechnologies.in" },
+  { Icon: Clock, label: "Working hours",  value: "Mon – Sat, 9 am – 6 pm",   href: null },
 ];
 
-const STEPS = [
-  {
-    n: "01",
-    title: "A reply within a day",
-    text: "From our technical team, with follow-up questions about your project.",
-  },
-  {
-    n: "02",
-    title: "A site assessment",
-    text: "We review the substrate, environment and your specification requirements.",
-  },
-  {
-    n: "03",
-    title: "A detailed proposal",
-    text: "With the right coating system, estimated timeline and fixed project cost.",
-  },
-];
+export default async function ContactPage() {
+  let heroContent: ContactHeroContent = {};
+  let stepsContent: ContactStepsContent = {};
 
-export default function ContactPage() {
+  if (dbReady()) {
+    try {
+      const rows = await prisma.pageSection.findMany({ where: { pageSlug: "contact" } });
+      for (const r of rows) {
+        if (r.sectionType === "contact-hero")  heroContent  = r.content as ContactHeroContent;
+        if (r.sectionType === "contact-steps") stepsContent = r.content as ContactStepsContent;
+      }
+    } catch {
+      // fall through to static defaults
+    }
+  }
+
+  const h = { ...D_HERO, ...heroContent };
+  const stepsHeading = stepsContent.heading ?? D_STEPS.heading;
+  const steps = stepsContent.steps ?? D_STEPS.steps;
+
   return (
     <>
       <Header />
       <main>
-        {/* Page hero - left-aligned, extra pb for form straddle */}
+        {/* Page hero */}
         <section
           className="page-title-parallax-background bg-dark-gray ipad-top-space-margin"
           data-parallax-background-ratio="0.5"
@@ -75,7 +85,6 @@ export default function ContactPage() {
                 <div
                   data-anime='{ "el": "childs", "translateY": [30,0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
                 >
-                  {/* two-line h1 */}
                   <h1
                     className="alt-font text-white mb-25px"
                     style={{
@@ -84,10 +93,9 @@ export default function ContactPage() {
                       letterSpacing: "-0.025em",
                     }}
                   >
-                    <span className="d-block fw-300">Tell us about your project.</span>
-                    <span className="d-block fw-700">We'll respond within a day.</span>
+                    <span className="d-block fw-300">{h.line1}</span>
+                    <span className="d-block fw-700">{h.line2}</span>
                   </h1>
-                  {/* lead */}
                   <p
                     className="mb-0"
                     style={{
@@ -97,7 +105,7 @@ export default function ContactPage() {
                       maxWidth: "100%",
                     }}
                   >
-                    Describe your surface, environment and timeline. Our team will assess your requirements and reply with the right coating recommendation.
+                    {h.subtitle}
                   </p>
                 </div>
               </div>
@@ -183,10 +191,10 @@ export default function ContactPage() {
                     style={{ borderTop: "1px solid #E8EDE3" }}
                   >
                     <p className="alt-font fs-18 fw-700 text-dark-gray mb-30px" style={{ letterSpacing: "-0.01em" }}>
-                      What happens next
+                      {stepsHeading}
                     </p>
                     <div className="d-flex flex-column" style={{ gap: "0" }}>
-                      {STEPS.map(({ n, title, text }, i) => (
+                      {steps.map(({ n, title, text }, i) => (
                         <div key={n} className="d-flex" style={{ gap: "16px" }}>
                           {/* marker + line */}
                           <div className="d-flex flex-column align-items-center flex-shrink-0" style={{ width: "36px" }}>
@@ -202,7 +210,7 @@ export default function ContactPage() {
                             >
                               <span className="text-white fw-600" style={{ fontSize: "11px" }}>{n}</span>
                             </div>
-                            {i < STEPS.length - 1 && (
+                            {i < steps.length - 1 && (
                               <div
                                 style={{
                                   width: "1px",
@@ -214,7 +222,7 @@ export default function ContactPage() {
                             )}
                           </div>
                           {/* content */}
-                          <div style={{ paddingBottom: i < STEPS.length - 1 ? "0" : "0", paddingTop: "6px" }} className={i < STEPS.length - 1 ? "mb-30px" : ""}>
+                          <div style={{ paddingTop: "6px" }} className={i < steps.length - 1 ? "mb-30px" : ""}>
                             <div className="text-dark-gray fw-600 mb-5px" style={{ fontSize: "15px" }}>{title}</div>
                             <p className="mb-0 lh-26" style={{ fontSize: "14px", color: "#879477" }}>{text}</p>
                           </div>

@@ -10,12 +10,14 @@ import {
   FolderOpen,
   MessageSquare,
   FileText,
+  Home,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
-  { label: "Enquiries", href: "/admin/enquiries", icon: MessageSquare },
+  { label: "Dashboard",  href: "/admin/dashboard", icon: LayoutDashboard },
+  { label: "Homepage",   href: "/admin/content",  icon: Home },
+  { label: "Enquiries",  href: "/admin/enquiries", icon: MessageSquare },
   { label: "Services", href: "/admin/services", icon: Wrench },
   { label: "Projects", href: "/admin/projects", icon: FolderOpen },
   { label: "Pages & SEO", href: "/admin/pages", icon: FileText },
