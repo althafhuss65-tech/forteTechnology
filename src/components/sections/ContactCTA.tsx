@@ -25,16 +25,18 @@ export default function ContactCTA({ content }: { content?: ContactCTAContent })
             <span className="fs-15 mb-10px fw-500 d-block" style={{ color: "#E8EDE3" }}>{c.eyebrow}</span>
             <h3 className="alt-font ls-minus-1px mb-30px" style={{ color: "#FFFFFF" }}>{c.heading}</h3>
             <p className="w-75 mx-auto md-w-100 mb-40px" style={{ color: "rgba(255,255,255,0.65)" }}>{c.body}</p>
-            <a href="/contact" className="btn btn-medium btn-white btn-round-edge fw-500 me-25px xs-me-0 xs-mb-20px xs-d-block">
-              <span>
-                <span className="btn-double-text" data-text="Get a quote">Get a quote</span>
-                <span><ArrowRight size={14} strokeWidth={2} /></span>
+            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+              <a href="/contact" className="btn btn-medium btn-white btn-round-edge fw-500">
+                <span>
+                  <span className="btn-double-text" data-text="Get a quote">Get a quote</span>
+                  <span><ArrowRight size={14} strokeWidth={2} /></span>
+                </span>
+              </a>
+              <span className="fw-500 align-middle fs-18" style={{ color: "#fff" }}>
+                <Phone size={16} strokeWidth={1.5} style={{ display: "inline", verticalAlign: "middle" }} className="me-10px" />
+                <a href={`tel:${c.phone.replace(/\s/g, "")}`} style={{ color: "#fff", textDecoration: "none" }}>{c.phone}</a>
               </span>
-            </a>
-            <span className="fw-500 d-inline-block xs-d-block align-middle fs-18" style={{ color: "#fff" }}>
-              <Phone size={16} strokeWidth={1.5} style={{ display: "inline", verticalAlign: "middle" }} className="me-10px" />
-              <a href={`tel:${c.phone.replace(/\s/g, "")}`} style={{ color: "#fff", textDecoration: "none" }}>{c.phone}</a>
-            </span>
+            </div>
           </div>
         </div>
       </div>
