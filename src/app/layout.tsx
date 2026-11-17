@@ -43,8 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Jost:wght@300;400;500;600;700&display=swap"
         />
-        {/* Preload Crafto JS so scripts are in cache before afterInteractive fires */}
-        <link rel="preload" href="/crafto/js/jquery.js" as="script" />
+        {/* Preload vendors + main so they're in cache when afterInteractive fires */}
         <link rel="preload" href="/crafto/js/vendors.min.js" as="script" />
         <link rel="preload" href="/crafto/js/main.js" as="script" />
         {/* Crafto CSS */}
@@ -58,7 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <ScrollToTop />
         <CraftoReinit />
-        {/* Load Crafto JS in sequence: jQuery → vendors → main */}
+        {/* anime + jQuery loaded before page JS so globals are set before Turbopack runtime */}
+        <Script src="/crafto/js/anime.min.js" strategy="beforeInteractive" />
+        <Script src="/crafto/js/jquery.js" strategy="beforeInteractive" />
+        {/* Load vendors → main in sequence after page is interactive */}
         <Script id="crafto-loader" strategy="afterInteractive">{`
           (function() {
             function load(src, cb) {
@@ -77,17 +79,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               });
             }, 5000);
 
-            load('/crafto/js/jquery.js', function() {
-              // 30+ vendor UMDs check define.amd. Masking while vendors loads forces the
-              // global-assignment path so window.anime, window.Swiper etc are all set.
-              var savedDefine = window.define;
-              window.define = undefined;
-              load('/crafto/js/vendors.min.js', function() {
-                window.define = savedDefine;
-                load('/crafto/js/main.js', function() {
-                  window._craftoReady = true;
-                  clearTimeout(fallbackTimer);
-                });
+            // anime + jQuery already global from beforeInteractive scripts.
+            // Mask define.amd while vendors loads so other UMDs (Swiper etc) use global path.
+            var savedDefine = window.define;
+            window.define = undefined;
+            load('/crafto/js/vendors.min.js', function() {
+              window.define = savedDefine;
+              load('/crafto/js/main.js', function() {
+                window._craftoReady = true;
+                clearTimeout(fallbackTimer);
               });
             });
           })();

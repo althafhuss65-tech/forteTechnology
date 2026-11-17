@@ -77,8 +77,9 @@ export default function CoatingSystemApproach({ content }: { content?: CoatingAp
         return;
       }
 
+      const navH = 80; // fixed navbar height px
       wrap.style.height     = `calc(100vh + ${N * 75}vh)`;
-      stage.style.height    = "100vh";
+      stage.style.height    = `calc(100vh - ${navH}px)`;
       stage.style.overflow  = "hidden";
 
       const rect  = wrap.getBoundingClientRect();
@@ -86,7 +87,7 @@ export default function CoatingSystemApproach({ content }: { content?: CoatingAp
 
       if (rect.top > 0) {
         stage.style.position = "absolute";
-        stage.style.top      = "0";
+        stage.style.top      = `${navH}px`;
         stage.style.bottom   = "auto";
       } else if (-rect.top >= total) {
         stage.style.position = "absolute";
@@ -94,7 +95,7 @@ export default function CoatingSystemApproach({ content }: { content?: CoatingAp
         stage.style.bottom   = "0";
       } else {
         stage.style.position = "fixed";
-        stage.style.top      = "0";
+        stage.style.top      = `${navH}px`;
         stage.style.bottom   = "auto";
       }
 
@@ -118,7 +119,7 @@ export default function CoatingSystemApproach({ content }: { content?: CoatingAp
   }, [N]);
 
   return (
-    <div ref={wrapRef} style={{ position: "relative", borderTop: "1px solid rgba(53,75,53,0.15)" }}>
+    <div ref={wrapRef} className="coating-approach-wrap" style={{ position: "relative", borderTop: "1px solid rgba(53,75,53,0.15)" }}>
       <div
         ref={stageRef}
         style={{
@@ -138,8 +139,8 @@ export default function CoatingSystemApproach({ content }: { content?: CoatingAp
               <p className="fs-15 fw-600 text-dark-gray mb-20px" style={{ fontStyle: "italic" }}>
                 {c.tagline}
               </p>
-              <p className="lh-30 mb-20px fs-15">{c.body}</p>
-              <p className="lh-28 fs-14 mb-0"
+              <p className="lh-26 mb-15px fs-15">{c.body}</p>
+              <p className="lh-24 fs-14 mb-0"
                 style={{ color: "#526747", borderLeft: "3px solid #526747", paddingLeft: "16px" }}>
                 {c.blockquote}
               </p>

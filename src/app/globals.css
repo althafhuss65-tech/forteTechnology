@@ -340,6 +340,9 @@ html {
   .sr-nav {
     padding: 14px 20px;
   }
+  .sr-nav-right {
+    grid-column: 3;
+  }
 }
 
 /* ─── Solar.Ray-inspired Hero ───────────────────────────────────── */
@@ -506,7 +509,7 @@ html {
     padding-bottom: 0;
   }
   .sr-hero-content {
-    padding: 16px 20px 0;
+    padding: 100px 20px 0;
   }
   .sr-hero-headline {
     letter-spacing: -0.5px;
@@ -549,6 +552,49 @@ html {
     padding-bottom: 40px !important;
     margin-bottom: 40px !important;
     border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  }
+}
+
+/* ─── AboutSection mobile image stack ───────────────────────── */
+/* Two-class specificity beats Bootstrap's single-class !important rules */
+@media (max-width: 767px) {
+  .about-img-col .about-img-primary {
+    float: none !important;
+    width: 100% !important;
+    display: block !important;
+    clear: both;
+  }
+  .about-img-col .about-img-secondary {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 85% !important;
+    display: block !important;
+    margin-top: -40px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    z-index: 2;
+  }
+}
+
+/* ─── ContactCTA mobile stack ───────────────────────────────── */
+@media (max-width: 767px) {
+  .contact-cta-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px;
+  }
+  .contact-cta-actions > * {
+    margin: 0 !important;
+  }
+}
+
+/* ─── CoatingSystemApproach mobile top spacing ──────────────── */
+@media (max-width: 767px) {
+  .coating-approach-wrap .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 

@@ -31,7 +31,7 @@ export default function ContactCTA({ content }: { content?: ContactCTAContent })
                 <span><ArrowRight size={14} strokeWidth={2} /></span>
               </span>
             </a>
-            <span className="fw-500 d-inline-block align-middle fs-18" style={{ color: "#fff" }}>
+            <span className="fw-500 d-inline-block xs-d-block align-middle fs-18" style={{ color: "#fff" }}>
               <Phone size={16} strokeWidth={1.5} style={{ display: "inline", verticalAlign: "middle" }} className="me-10px" />
               <a href={`tel:${c.phone.replace(/\s/g, "")}`} style={{ color: "#fff", textDecoration: "none" }}>{c.phone}</a>
             </span>

@@ -56,15 +56,21 @@ export default function AboutSection({ content }: { content?: AboutContent }) {
               </div>
             </div>
           </div>
-          <div className="col-xl-6 col-lg-5 position-relative offset-lg-1 offset-md-2">
-            <span className="position-absolute fs-75 text-dark-gray fw-600 ls-minus-4px" style={{ zIndex: 3, left: "-70px", top: "-5px" }} data-anime='{ "opacity": [0,1], "duration": 600, "delay": 1000, "staggervalue": 100, "easing": "easeOutQuad" }'>
+          <div className="col-xl-6 col-lg-5 position-relative offset-lg-1 offset-md-2 about-img-col">
+            {/* Desktop year badge */}
+            <span className="position-absolute fs-75 text-dark-gray fw-600 ls-minus-4px d-none d-md-block" style={{ zIndex: 3, left: "-70px", top: "-5px" }} data-anime='{ "opacity": [0,1], "duration": 600, "delay": 1000, "staggervalue": 100, "easing": "easeOutQuad" }'>
               <span className="fs-15 d-table lh-16 text-uppercase text-medium-gray fw-500 ls-1px">Started in</span>
               {c.yearFounded}
             </span>
-            <div className="w-80 overflow-hidden position-relative md-w-90 border-radius-6px float-end" style={{ zIndex: 1 }} data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
+            {/* Mobile year badge — no anime, always visible, centered */}
+            <div className="d-block d-md-none text-center mb-20px">
+              <span className="fs-13 text-uppercase text-medium-gray fw-500 ls-1px d-block mb-5px">Started in</span>
+              <span className="fs-50 text-dark-gray fw-600 ls-minus-2px">{c.yearFounded}</span>
+            </div>
+            <div className="w-80 overflow-hidden position-relative md-w-90 border-radius-6px float-end about-img-primary" style={{ zIndex: 1 }} data-anime='{ "effect": "slide", "color": "#354B35", "direction":"rl", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
               <Image className="w-100" src="/images/forte/team-spray.jpg" alt="Industrial work" width={900} height={600} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 45vw" />
             </div>
-            <div className="position-absolute left-minus-70px bottom-minus-30px w-60 overflow-hidden md-left-minus-100px sm-left-15px" style={{ zIndex: 2 }} data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)" data-anime='{ "effect": "slide", "color": "#36332e", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
+            <div className="position-absolute left-minus-70px bottom-minus-30px w-60 overflow-hidden md-left-minus-100px about-img-secondary" style={{ zIndex: 2 }} data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)" data-anime='{ "effect": "slide", "color": "#36332e", "direction":"lr", "easing": "easeOutQuad", "duration": 600, "delay": 500 }'>
               <Image className="w-100 border-radius-6px" src="/images/forte/columns.jpg" alt="Coating application" width={900} height={600} style={{ height: "auto" }} sizes="(max-width: 768px) 100vw, 35vw" />
             </div>
           </div>
