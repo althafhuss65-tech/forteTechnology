@@ -30,6 +30,7 @@ const SETTING_GROUPS = [
     fields: [
       { key: "facebook", label: "Facebook URL", type: "url", placeholder: "https://www.facebook.com/people/Forte-Technologies/100067198332123/" },
       { key: "linkedin", label: "LinkedIn URL", type: "url", placeholder: "https://www.linkedin.com/company/forte-technologiesin/" },
+      { key: "instagram", label: "Instagram URL", type: "url", placeholder: "https://www.instagram.com/technologiesforte" },
       { key: "twitter", label: "X (Twitter) URL", type: "url", placeholder: "https://x.com/ForteTechnolog1" },
       { key: "youtube", label: "YouTube URL", type: "url", placeholder: "https://www.youtube.com/@fortetechnologies7372" },
     ],
