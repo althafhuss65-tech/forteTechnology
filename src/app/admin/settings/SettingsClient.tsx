@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Save, CheckCircle } from "lucide-react";
+import { Save, CheckCircle, KeyRound } from "lucide-react";
 
 interface Props {
   settings: Record<string, string>;
@@ -50,6 +50,34 @@ export default function SettingsClient({ settings: initial }: Props) {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState("");
+
+  const [pw, setPw] = useState({ current: "", newPassword: "", confirm: "" });
+  const [pwSaving, setPwSaving] = useState(false);
+  const [pwSaved, setPwSaved] = useState(false);
+  const [pwError, setPwError] = useState("");
+
+  const handlePasswordChange = async () => {
+    setPwError("");
+    if (pw.newPassword.length < 6) { setPwError("New password must be at least 6 characters."); return; }
+    if (pw.newPassword !== pw.confirm) { setPwError("Passwords do not match."); return; }
+    setPwSaving(true);
+    try {
+      const res = await fetch("/api/admin/password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ current: pw.current, newPassword: pw.newPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setPwError(data.error || "Failed to update password."); return; }
+      setPwSaved(true);
+      setPw({ current: "", newPassword: "", confirm: "" });
+      setTimeout(() => setPwSaved(false), 3000);
+    } catch {
+      setPwError("Failed to update password. Please try again.");
+    } finally {
+      setPwSaving(false);
+    }
+  };
 
   const handleSave = async () => {
     setSaving(true);
@@ -134,6 +162,44 @@ export default function SettingsClient({ settings: initial }: Props) {
           </>
         )}
       </button>
+
+      {/* Change Password */}
+      <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-[#E5E7EB] flex items-center gap-2">
+          <KeyRound size={15} className="text-[#354B35]" />
+          <div>
+            <h2 className="font-semibold text-[#1A1A2E]">Change Password</h2>
+            <p className="text-xs text-gray-500 mt-0.5">Update your admin login password.</p>
+          </div>
+        </div>
+        <div className="p-6 space-y-4">
+          {[
+            { label: "Current Password", key: "current" },
+            { label: "New Password", key: "newPassword" },
+            { label: "Confirm New Password", key: "confirm" },
+          ].map(({ label, key }) => (
+            <div key={key}>
+              <label className="block text-xs font-semibold text-[#374151] mb-1.5 uppercase tracking-wide">{label}</label>
+              <input
+                type="password"
+                value={pw[key as keyof typeof pw]}
+                onChange={(e) => setPw((p) => ({ ...p, [key]: e.target.value }))}
+                className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35]"
+              />
+            </div>
+          ))}
+          {pwError && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">{pwError}</div>
+          )}
+          <button
+            onClick={handlePasswordChange}
+            disabled={pwSaving || !pw.current || !pw.newPassword || !pw.confirm}
+            className="flex items-center gap-2 px-6 py-3 bg-[#354B35] text-white font-semibold rounded-lg hover:bg-[#243324] transition-colors disabled:opacity-60"
+          >
+            {pwSaved ? <><CheckCircle size={16} /> Password Updated!</> : <><KeyRound size={16} />{pwSaving ? "Updating..." : "Update Password"}</>}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

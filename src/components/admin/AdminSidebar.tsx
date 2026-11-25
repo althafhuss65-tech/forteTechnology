@@ -36,7 +36,7 @@ export default function AdminSidebar() {
           alt="Forte Technologies"
           width={120}
           height={48}
-          className="h-9 w-auto object-contain brightness-0 invert"
+          className="h-9 w-auto object-contain"
         />
         <p className="text-gray-500 text-[11px] mt-1 font-medium">Admin Panel</p>
       </div>
