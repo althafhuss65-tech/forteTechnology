@@ -40,7 +40,7 @@ export default function AdminLogin() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Image
-            src="/logo.png"
+            src="/forte-logo.png"
             alt="Forte Technologies"
             width={140}
             height={56}
