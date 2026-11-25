@@ -5,11 +5,13 @@ import ContactCTA from "@/components/sections/ContactCTA";
 import { Icon } from "@/components/ui/Icon";
 import { prisma } from "@/lib/prisma";
 
-export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Forte Technologies offers protective & anticorrosive coatings, industrial coatings, industrial floor coatings and industrial refurbishment & project execution services across South India.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await prisma.page.findUnique({ where: { slug: "services" } }).catch(() => null);
+  return {
+    title: page?.metaTitle || "Services",
+    description: page?.metaDesc || "Forte Technologies offers protective & anticorrosive coatings, industrial coatings, industrial floor coatings and industrial refurbishment & project execution services across South India.",
+  };
+}
 
 const dbReady = () => {
   const url = process.env.DATABASE_URL ?? "";

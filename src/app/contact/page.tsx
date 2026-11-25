@@ -5,11 +5,13 @@ import ContactForm from "@/components/sections/ContactForm";
 import { Phone, Mail, Clock } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 7899298718 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await prisma.page.findUnique({ where: { slug: "contact" } }).catch(() => null);
+  return {
+    title: page?.metaTitle || "Contact Us",
+    description: page?.metaDesc || "Get in touch with Forte Technologies for industrial and protective coating enquiries. Call +91 6364227475 or email info@fortetechnologies.in. Based in Attibele, Bangalore.",
+  };
+}
 
 const dbReady = () => {
   const url = process.env.DATABASE_URL ?? "";

@@ -7,11 +7,13 @@ import { Eye, Target, Star } from "lucide-react";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "Learn about Forte Technologies - an industrial coating company established in 2020, specialising in protective coatings, industrial coatings and floor coatings.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await prisma.page.findUnique({ where: { slug: "about" } }).catch(() => null);
+  return {
+    title: page?.metaTitle || "About Us",
+    description: page?.metaDesc || "Learn about Forte Technologies - an industrial coating company established in 2020, specialising in protective coatings, industrial coatings and floor coatings.",
+  };
+}
 
 const dbReady = () => {
   const url = process.env.DATABASE_URL ?? "";

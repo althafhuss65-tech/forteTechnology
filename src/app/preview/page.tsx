@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await prisma.page.findUnique({ where: { slug: "home" } }).catch(() => null);
+  return {
+    title: page?.metaTitle || "Forte Technologies — Protective & Industrial Coating Specialists",
+    description: page?.metaDesc || "Forte Technologies provides protective coatings, anticorrosive coatings, industrial floor coatings and refurbishment services across South India.",
+  };
+}
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
