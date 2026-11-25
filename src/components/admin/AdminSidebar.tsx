@@ -32,7 +32,7 @@ export default function AdminSidebar() {
       {/* Logo */}
       <div className="px-6 py-5 border-b border-white/10">
         <Image
-          src="/logo.png"
+          src="/forte-logo-white.png"
           alt="Forte Technologies"
           width={120}
           height={48}
