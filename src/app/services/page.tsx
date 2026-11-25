@@ -169,12 +169,26 @@ function Divider() {
   );
 }
 
+type DbService = { title: string; longDesc: string | null; shortDesc: string; icon: string | null; tags: string | null };
+const toItem = (s: DbService) => ({ icon: s.icon || "wrench", title: s.title, tags: s.tags || "", desc: s.longDesc || s.shortDesc });
+
 export default async function ServicesPage() {
   let sc: Record<string, SvcContent> = {};
+  let dbByCategory: Record<string, ReturnType<typeof toItem>[]> = {};
+
   if (dbReady()) {
     try {
       const rows = await prisma.pageSection.findMany({ where: { pageSlug: "services" } });
       for (const r of rows) sc[r.sectionType] = r.content as SvcContent;
+
+      const allServices = await prisma.service.findMany({
+        where: { isPublished: true },
+        orderBy: { orderIndex: "asc" },
+      });
+      for (const cat of ["protective", "industrial", "flooring", "refurbishment"]) {
+        const items = allServices.filter(s => s.category === cat).map(toItem);
+        if (items.length) dbByCategory[cat] = items;
+      }
     } catch {
       // fall through to static defaults
     }
@@ -209,13 +223,13 @@ export default async function ServicesPage() {
           </div>
         </section>
 
-        <ServiceSection {...svc("services-protective")} items={PROTECTIVE_ANTICORROSIVE} cols="row-cols-lg-4" />
+        <ServiceSection {...svc("services-protective")} items={dbByCategory["protective"] ?? PROTECTIVE_ANTICORROSIVE} cols="row-cols-lg-4" />
         <Divider />
-        <ServiceSection {...svc("services-industrial")} items={INDUSTRIAL} cols="row-cols-lg-2" />
+        <ServiceSection {...svc("services-industrial")} items={dbByCategory["industrial"] ?? INDUSTRIAL} cols="row-cols-lg-2" />
         <Divider />
-        <ServiceSection {...svc("services-floor")} items={FLOOR} cols="row-cols-lg-4" />
+        <ServiceSection {...svc("services-floor")} items={dbByCategory["flooring"] ?? FLOOR} cols="row-cols-lg-4" />
         <Divider />
-        <ServiceSection {...svc("services-refurbishment")} items={REFURBISHMENT} cols="row-cols-lg-2" />
+        <ServiceSection {...svc("services-refurbishment")} items={dbByCategory["refurbishment"] ?? REFURBISHMENT} cols="row-cols-lg-2" />
 
         <ContactCTA />
       </main>

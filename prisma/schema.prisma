@@ -60,9 +60,11 @@ model Service {
   title       String
   shortDesc   String   @db.Text
   longDesc    String?  @db.Text
+  icon        String?  @default("wrench")
+  tags        String?
   imageUrl    String?
   altText     String?
-  category    String   // protective | flooring
+  category    String   // protective | industrial | flooring | refurbishment
   orderIndex  Int      @default(0)
   isPublished Boolean  @default(true)
   createdAt   DateTime @default(now())

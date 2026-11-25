@@ -8,10 +8,19 @@ interface Props {
   initialServices: Service[];
 }
 
+const CATS = [
+  { value: "protective",    label: "Protective & Anticorrosive" },
+  { value: "industrial",    label: "Industrial Coatings" },
+  { value: "flooring",      label: "Industrial Floor Coatings" },
+  { value: "refurbishment", label: "Refurbishment & Execution" },
+] as const;
+
 const EMPTY_FORM = {
   title: "",
   shortDesc: "",
   longDesc: "",
+  icon: "",
+  tags: "",
   category: "protective",
   orderIndex: 0,
   isPublished: true,
@@ -31,6 +40,8 @@ export default function ServicesClient({ initialServices }: Props) {
       title: service.title,
       shortDesc: service.shortDesc,
       longDesc: service.longDesc || "",
+      icon: service.icon || "",
+      tags: service.tags || "",
       category: service.category,
       orderIndex: service.orderIndex,
       isPublished: service.isPublished,
@@ -115,24 +126,24 @@ export default function ServicesClient({ initialServices }: Props) {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Icon Name</label>
+            <input className={inputClass} value={form.icon} onChange={(e) => setForm((p) => ({ ...p, icon: e.target.value }))} placeholder="e.g. shield, wrench, factory" />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Tags</label>
+            <input className={inputClass} value={form.tags} onChange={(e) => setForm((p) => ({ ...p, tags: e.target.value }))} placeholder="e.g. Corrosion · Wear · UV" />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
             <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Category</label>
-            <select
-              className={inputClass}
-              value={form.category}
-              onChange={(e) => setForm((p) => ({ ...p, category: e.target.value }))}
-            >
-              <option value="protective">Protective & Industrial</option>
-              <option value="flooring">Industrial Floor Coatings</option>
+            <select className={inputClass} value={form.category} onChange={(e) => setForm((p) => ({ ...p, category: e.target.value }))}>
+              {CATS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
             </select>
           </div>
           <div>
             <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Order</label>
-            <input
-              type="number"
-              className={inputClass}
-              value={form.orderIndex}
-              onChange={(e) => setForm((p) => ({ ...p, orderIndex: Number(e.target.value) }))}
-            />
+            <input type="number" className={inputClass} value={form.orderIndex} onChange={(e) => setForm((p) => ({ ...p, orderIndex: Number(e.target.value) }))} />
           </div>
         </div>
         <label className="flex items-center gap-2 cursor-pointer">
@@ -165,11 +176,6 @@ export default function ServicesClient({ initialServices }: Props) {
     </div>
   );
 
-  const grouped = {
-    protective: services.filter((s) => s.category === "protective"),
-    flooring: services.filter((s) => s.category === "flooring"),
-  };
-
   return (
     <div>
       <div className="flex justify-end mb-5">
@@ -184,14 +190,14 @@ export default function ServicesClient({ initialServices }: Props) {
 
       {(adding && !editing) && FormPanel}
 
-      {(["protective", "flooring"] as const).map((cat) => (
+      {CATS.map(({ value: cat, label }) => (
         <div key={cat} className="mb-8">
           <h2 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">
-            {cat === "protective" ? "Protective & Industrial Coatings" : "Industrial Floor Coatings"}
+            {label}
           </h2>
-          {editing && grouped[cat].some((s) => s.id === editing) && FormPanel}
+          {editing && services.filter(s => s.category === cat).some((s) => s.id === editing) && FormPanel}
           <div className="space-y-3">
-            {grouped[cat].map((service) => (
+            {services.filter(s => s.category === cat).map((service) => (
               <div
                 key={service.id}
                 className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-5 flex items-start justify-between gap-4"
@@ -230,7 +236,7 @@ export default function ServicesClient({ initialServices }: Props) {
                 </div>
               </div>
             ))}
-            {grouped[cat].length === 0 && (
+            {services.filter(s => s.category === cat).length === 0 && (
               <p className="text-sm text-gray-400 py-4 text-center bg-white rounded-xl border border-dashed border-[#E5E7EB]">
                 No services in this category yet.
               </p>
