@@ -1,7 +1,6 @@
 import "./admin.css";
 import { auth } from "@/lib/auth";
-import AdminSidebar from "@/components/admin/AdminSidebar";
-import AdminHeader from "@/components/admin/AdminHeader";
+import AdminShell from "@/components/admin/AdminShell";
 
 export default async function AdminLayout({
   children,
@@ -12,11 +11,13 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-[#F1F5F9] flex">
-      {session && <AdminSidebar />}
-      <div className={`flex-1 flex flex-col ${session ? "ml-64" : ""}`}>
-        {session && <AdminHeader user={session.user} />}
-        <main className="flex-1 p-6">{children}</main>
-      </div>
+      {session ? (
+        <AdminShell user={session.user}>{children}</AdminShell>
+      ) : (
+        <div className="flex-1 flex flex-col">
+          <main className="flex-1">{children}</main>
+        </div>
+      )}
     </div>
   );
 }

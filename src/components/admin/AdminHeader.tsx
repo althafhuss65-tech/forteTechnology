@@ -1,11 +1,12 @@
 "use client";
 
 import { signOut } from "next-auth/react";
-import { LogOut, User, KeyRound, ChevronDown, X, CheckCircle, Eye, EyeOff } from "lucide-react";
+import { LogOut, User, KeyRound, ChevronDown, X, CheckCircle, Eye, EyeOff, Menu } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 interface Props {
   user: { name?: string | null; email?: string | null } | undefined;
+  onMenuClick: () => void;
 }
 
 function PasswordModal({ onClose }: { onClose: () => void }) {
@@ -81,7 +82,7 @@ function PasswordModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-export default function AdminHeader({ user }: Props) {
+export default function AdminHeader({ user, onMenuClick }: Props) {
   const [open, setOpen] = useState(false);
   const [showPw, setShowPw] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -96,8 +97,16 @@ export default function AdminHeader({ user }: Props) {
 
   return (
     <>
-      <header className="bg-white border-b border-[#E5E7EB] px-6 py-4 flex items-center justify-between sticky top-0 z-30">
-        <div />
+      <header className="bg-white border-b border-[#E5E7EB] px-4 lg:px-6 py-4 flex items-center justify-between sticky top-0 z-30">
+        {/* Hamburger — mobile/tablet only */}
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden p-2 rounded-lg text-[#374151] hover:bg-gray-100 transition-colors"
+          aria-label="Open menu"
+        >
+          <Menu size={20} />
+        </button>
+        <div className="hidden lg:block" />
         <div ref={ref} className="relative">
           <button
             onClick={() => setOpen(o => !o)}
