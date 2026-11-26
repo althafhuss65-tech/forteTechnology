@@ -674,58 +674,44 @@ const PAGE_LABEL: Record<PageSlug, string> = {
 
 // ============ MAIN COMPONENT ============
 
-export default function ContentClient({ initialData }: { initialData: Record<string, Record<string, unknown>> }) {
-  const [currentPage, setCurrentPage] = useState<PageSlug>("home");
-  const [activeKey, setActiveKey] = useState<string>("hero");
+export default function ContentClient({
+  initialData,
+  initialPage,
+}: {
+  initialData: Record<string, Record<string, unknown>>;
+  initialPage: PageSlug;
+}) {
+  const sections = PAGE_SECTIONS[initialPage];
+  const [activeKey, setActiveKey] = useState<string>(sections[0].key);
 
-  const sections = PAGE_SECTIONS[currentPage];
   const activeSection = sections.find(s => s.key === activeKey) ?? sections[0];
-  const pageData = initialData[currentPage] ?? {};
+  const pageData = initialData[initialPage] ?? {};
 
   return (
-    <div>
-      {/* Page tabs */}
-      <div className="flex gap-1 mb-6 border-b border-[#E5E7EB]">
-        {(["home", "services", "contact", "about"] as PageSlug[]).map(p => (
-          <button
-            key={p}
-            onClick={() => { setCurrentPage(p); setActiveKey(PAGE_SECTIONS[p][0].key); }}
-            className={`px-4 py-2.5 text-sm font-medium rounded-t-lg border transition-colors ${
-              currentPage === p
-                ? "border-[#E5E7EB] border-b-white bg-white text-[#354B35] -mb-px relative z-10"
-                : "border-transparent text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {PAGE_LABEL[p]}
-          </button>
-        ))}
+    <div className="flex gap-6 items-start">
+      <div className="w-48 flex-shrink-0 sticky top-6">
+        <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
+          {sections.map((s) => (
+            <button
+              key={s.key}
+              onClick={() => setActiveKey(s.key)}
+              className={`w-full text-left px-4 py-3 text-sm border-b border-[#E5E7EB] last:border-0 transition-colors ${
+                activeSection.key === s.key
+                  ? "bg-[#354B35] text-white font-semibold"
+                  : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="flex gap-6 items-start">
-        <div className="w-48 flex-shrink-0 sticky top-6">
-          <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
-            {sections.map((s) => (
-              <button
-                key={s.key}
-                onClick={() => setActiveKey(s.key)}
-                className={`w-full text-left px-4 py-3 text-sm border-b border-[#E5E7EB] last:border-0 transition-colors ${
-                  activeSection.key === s.key
-                    ? "bg-[#354B35] text-white font-semibold"
-                    : "text-gray-700 hover:bg-gray-50"
-                }`}
-              >
-                {s.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex-1 bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6">
-          <h2 className="font-semibold text-[#1A1A2E] mb-5 pb-4 border-b border-[#E5E7EB]">
-            {activeSection.label}
-          </h2>
-          <activeSection.Form data={pageData[activeSection.key]} />
-        </div>
+      <div className="flex-1 bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6">
+        <h2 className="text-2xl text-gray-300 mb-5 pb-4 border-b border-[#E5E7EB]">
+          {activeSection.label}
+        </h2>
+        <activeSection.Form data={pageData[activeSection.key]} />
       </div>
     </div>
   );

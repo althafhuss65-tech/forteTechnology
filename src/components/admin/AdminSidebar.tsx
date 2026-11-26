@@ -11,17 +11,25 @@ import {
   MessageSquare,
   FileText,
   Home,
+  Layers,
+  Phone,
+  Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { label: "Dashboard",  href: "/admin/dashboard", icon: LayoutDashboard },
-  { label: "Homepage",   href: "/admin/content",  icon: Home },
-  { label: "Enquiries",  href: "/admin/enquiries", icon: MessageSquare },
-  { label: "Services", href: "/admin/services", icon: Wrench },
-  { label: "Projects", href: "/admin/projects", icon: FolderOpen },
-  { label: "Pages & SEO", href: "/admin/pages", icon: FileText },
-  { label: "Settings", href: "/admin/settings", icon: Settings },
+type NavItem = { label: string; href: string; icon: React.ElementType; group?: string };
+
+const NAV: NavItem[] = [
+  { label: "Dashboard",     href: "/admin/dashboard",          icon: LayoutDashboard },
+  { label: "Home Page",     href: "/admin/content/home",       icon: Home,        group: "Page Content" },
+  { label: "Services Page", href: "/admin/content/services",   icon: Layers },
+  { label: "Contact Page",  href: "/admin/content/contact",    icon: Phone },
+  { label: "About Page",    href: "/admin/content/about",      icon: Users },
+  { label: "Enquiries",     href: "/admin/enquiries",          icon: MessageSquare, group: "Manage" },
+  { label: "Services",      href: "/admin/services",           icon: Wrench },
+  { label: "Projects",      href: "/admin/projects",           icon: FolderOpen },
+  { label: "Pages & SEO",   href: "/admin/pages",              icon: FileText },
+  { label: "Settings",      href: "/admin/settings",           icon: Settings },
 ];
 
 export default function AdminSidebar() {
@@ -45,23 +53,27 @@ export default function AdminSidebar() {
       <nav className="flex-1 px-3 py-4">
         {NAV.map((item) => {
           const Icon = item.icon;
-          const active =
-            pathname === item.href ||
-            (item.href !== "/admin/dashboard" && pathname.startsWith(item.href));
+          const active = pathname === item.href || pathname.startsWith(item.href + "/");
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 text-sm font-medium transition-colors",
-                active
-                  ? "bg-[#354B35] text-white"
-                  : "text-gray-400 hover:text-white hover:bg-white/5"
+            <div key={item.href}>
+              {item.group && (
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-600 px-3 pt-4 pb-1">
+                  {item.group}
+                </p>
               )}
-            >
-              <Icon size={16} />
-              {item.label}
-            </Link>
+              <Link
+                href={item.href}
+                className={cn(
+                  "flex items-center gap-3 px-3 py-2.5 rounded-lg mb-1 text-sm font-medium transition-colors",
+                  active
+                    ? "bg-[#354B35] text-white"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                )}
+              >
+                <Icon size={16} />
+                {item.label}
+              </Link>
+            </div>
           );
         })}
       </nav>
