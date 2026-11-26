@@ -80,7 +80,7 @@ export default function AdminSidebar() {
 
       {/* Footer */}
       <div className="px-6 py-4 border-t border-white/10">
-        <p className="text-gray-600 text-[11px]">Forte Technologies © 2024</p>
+        <p className="text-gray-600 text-[11px]">Forte Technologies © 2026</p>
       </div>
     </aside>
   );

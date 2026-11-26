@@ -40,7 +40,7 @@ const SETTING_GROUPS = [
     desc: "Core branding text used across the website.",
     fields: [
       { key: "site_tagline", label: "Site Tagline", type: "text", placeholder: "Protective & Industrial Coating Specialists" },
-      { key: "footer_copyright", label: "Footer Copyright Text", type: "text", placeholder: "© 2024 Forte Technologies. All rights reserved." },
+      { key: "footer_copyright", label: "Footer Copyright Text", type: "text", placeholder: "© 2026 Forte Technologies. All rights reserved." },
     ],
   },
 ];
