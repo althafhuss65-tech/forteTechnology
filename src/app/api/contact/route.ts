@@ -33,15 +33,29 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // Get configured recipient email from settings, fallback to env
+    // Rate limit: 5 submissions per IP per hour
+    const recentCount = await prisma.enquiry.count({
+      where: { ipAddress: ip, createdAt: { gte: new Date(Date.now() - 60 * 60 * 1000) } },
+    });
+    if (recentCount >= 5) {
+      return NextResponse.json({ error: "Too many submissions. Please try again later." }, { status: 429 });
+    }
+
+    // Get configured settings, fallback to defaults
     let recipientEmail = process.env.ADMIN_EMAIL || "info@fortetechnologies.in";
+    let sitePhone: string | undefined;
+    let siteEmail: string | undefined;
     try {
-      const setting = await prisma.siteSetting.findUnique({
-        where: { key: "enquiry_email" },
+      const settings = await prisma.siteSetting.findMany({
+        where: { key: { in: ["enquiry_email", "phone", "email"] } },
       });
-      if (setting?.value) recipientEmail = setting.value;
+      for (const s of settings) {
+        if (s.key === "enquiry_email" && s.value) recipientEmail = s.value;
+        if (s.key === "phone" && s.value) sitePhone = s.value;
+        if (s.key === "email" && s.value) siteEmail = s.value;
+      }
     } catch {
-      // use fallback
+      // use fallbacks
     }
 
     // Send email notification
@@ -52,6 +66,8 @@ export async function POST(req: NextRequest) {
       subject: data.subject,
       message: data.message,
       recipientEmail,
+      sitePhone,
+      siteEmail,
     });
 
     return NextResponse.json({ success: true });

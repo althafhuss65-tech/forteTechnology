@@ -10,6 +10,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+function esc(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
 export async function sendEnquiryEmail(data: {
   name: string;
   email: string;
@@ -17,7 +21,12 @@ export async function sendEnquiryEmail(data: {
   subject?: string;
   message: string;
   recipientEmail: string;
+  sitePhone?: string;
+  siteEmail?: string;
 }) {
+  const footerPhone = data.sitePhone || "+91 7899298718";
+  const footerEmail = data.siteEmail || "info@fortetechnologies.in";
+
   await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: data.recipientEmail,
@@ -30,17 +39,17 @@ export async function sendEnquiryEmail(data: {
         </div>
         <div style="padding:32px;">
           <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:8px 0;color:#6b7280;width:120px;">Name</td><td style="padding:8px 0;font-weight:600;">${data.name}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280;">Email</td><td style="padding:8px 0;"><a href="mailto:${data.email}">${data.email}</a></td></tr>
-            ${data.phone ? `<tr><td style="padding:8px 0;color:#6b7280;">Phone</td><td style="padding:8px 0;">${data.phone}</td></tr>` : ""}
-            ${data.subject ? `<tr><td style="padding:8px 0;color:#6b7280;">Subject</td><td style="padding:8px 0;">${data.subject}</td></tr>` : ""}
+            <tr><td style="padding:8px 0;color:#6b7280;width:120px;">Name</td><td style="padding:8px 0;font-weight:600;">${esc(data.name)}</td></tr>
+            <tr><td style="padding:8px 0;color:#6b7280;">Email</td><td style="padding:8px 0;"><a href="mailto:${esc(data.email)}">${esc(data.email)}</a></td></tr>
+            ${data.phone ? `<tr><td style="padding:8px 0;color:#6b7280;">Phone</td><td style="padding:8px 0;">${esc(data.phone)}</td></tr>` : ""}
+            ${data.subject ? `<tr><td style="padding:8px 0;color:#6b7280;">Subject</td><td style="padding:8px 0;">${esc(data.subject)}</td></tr>` : ""}
           </table>
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
           <p style="color:#6b7280;margin:0 0 8px;">Message</p>
-          <p style="margin:0;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
+          <p style="margin:0;line-height:1.6;white-space:pre-wrap;">${esc(data.message)}</p>
         </div>
         <div style="background:#f9fafb;padding:16px 32px;text-align:center;color:#9ca3af;font-size:13px;">
-          Forte Technologies · info@fortetechnologies.in · +91 7899298718
+          Forte Technologies · ${esc(footerEmail)} · ${esc(footerPhone)}
         </div>
       </div>
     `,

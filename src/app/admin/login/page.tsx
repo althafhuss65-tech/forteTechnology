@@ -69,7 +69,7 @@ export default function AdminLogin() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@fortetechnologies.in"
+                  placeholder="you@example.com"
                   required
                   className="w-full pl-9 pr-4 py-3 border border-[#E5E7EB] rounded-lg text-sm text-[#374151] focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35] transition-colors"
                 />

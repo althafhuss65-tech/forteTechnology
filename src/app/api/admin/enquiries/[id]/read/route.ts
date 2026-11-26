@@ -9,7 +9,11 @@ export async function PATCH(
   const session = await auth();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { id } = await params;
-  await prisma.enquiry.update({ where: { id }, data: { isRead: true } });
-  return NextResponse.json({ success: true });
+  try {
+    const { id } = await params;
+    await prisma.enquiry.update({ where: { id }, data: { isRead: true } });
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ error: "Failed to mark as read" }, { status: 500 });
+  }
 }

@@ -58,7 +58,7 @@ export default function SettingsClient({ settings: initial }: Props) {
 
   const handlePasswordChange = async () => {
     setPwError("");
-    if (pw.newPassword.length < 6) { setPwError("New password must be at least 6 characters."); return; }
+    if (pw.newPassword.length < 8) { setPwError("New password must be at least 8 characters."); return; }
     if (pw.newPassword !== pw.confirm) { setPwError("Passwords do not match."); return; }
     setPwSaving(true);
     try {
