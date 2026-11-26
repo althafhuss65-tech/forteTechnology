@@ -689,14 +689,14 @@ export default function ContentClient({
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row lg:gap-6 lg:items-start">
-      {/* Section selector — vertical list on desktop, horizontal scroll on mobile */}
+      {/* Section selector */}
       <div className="lg:w-48 lg:flex-shrink-0 lg:sticky lg:top-6">
-        <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible">
+        <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
           {sections.map((s) => (
             <button
               key={s.key}
               onClick={() => setActiveKey(s.key)}
-              className={`flex-shrink-0 text-left px-4 py-3 text-sm border-r border-[#E5E7EB] last:border-0 lg:border-r-0 lg:border-b lg:last:border-0 transition-colors whitespace-nowrap lg:whitespace-normal lg:w-full ${
+              className={`w-full text-left px-4 py-3 text-sm border-b border-[#E5E7EB] last:border-0 transition-colors ${
                 activeSection.key === s.key
                   ? "bg-[#354B35] text-white font-semibold"
                   : "text-gray-700 hover:bg-gray-50"
