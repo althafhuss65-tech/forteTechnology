@@ -10,7 +10,7 @@ interface Props {
 
 function PasswordModal({ onClose }: { onClose: () => void }) {
   const [pw, setPw] = useState({ current: "", newPassword: "", confirm: "" });
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState({ current: false, newPassword: false, confirm: false });
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState("");
@@ -55,14 +55,14 @@ function PasswordModal({ onClose }: { onClose: () => void }) {
               <label className="block text-xs font-semibold text-[#374151] mb-1.5 uppercase tracking-wide">{label}</label>
               <div className="relative">
                 <input
-                  type={show ? "text" : "password"}
+                  type={show[key as keyof typeof show] ? "text" : "password"}
                   value={pw[key as keyof typeof pw]}
                   onChange={e => setPw(p => ({ ...p, [key]: e.target.value }))}
                   required
                   className="w-full px-4 py-2.5 pr-10 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#354B35] focus:ring-1 focus:ring-[#354B35]"
                 />
-                <button type="button" onClick={() => setShow(s => !s)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                  {show ? <EyeOff size={15} /> : <Eye size={15} />}
+                <button type="button" onClick={() => setShow(s => ({ ...s, [key]: !s[key as keyof typeof s] }))} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                  {show[key as keyof typeof show] ? <EyeOff size={15} /> : <Eye size={15} />}
                 </button>
               </div>
             </div>
