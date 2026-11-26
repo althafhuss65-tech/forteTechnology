@@ -226,9 +226,12 @@ function ServicesOverviewForm({ data }: { data: unknown }) {
     setF(p => ({ ...p, [k]: e.target.value }));
   return (
     <form onSubmit={e => { e.preventDefault(); save(f); }} className="space-y-4">
-      <p className="text-sm text-gray-500 bg-blue-50 border border-blue-100 rounded-lg px-4 py-3">
-        The service cards on the homepage are managed via the <strong>Services</strong> admin page.
-      </p>
+      <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 flex items-center justify-between gap-4">
+        <p className="text-sm text-gray-600">The service cards (title, description, image) are managed in the Services section.</p>
+        <a href="/admin/services" className="shrink-0 text-sm font-semibold text-white bg-[#354B35] hover:bg-[#243324] px-4 py-2 rounded-lg transition-colors">
+          Manage Services →
+        </a>
+      </div>
       <Field label="Eyebrow"><input className={INP} value={f.eyebrow} onChange={up("eyebrow")} /></Field>
       <Field label="Heading"><textarea className={TA} rows={2} value={f.heading} onChange={up("heading")} /></Field>
       <Field label="CTA Text"><input className={INP} value={f.ctaText} onChange={up("ctaText")} /></Field>
