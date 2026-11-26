@@ -14,9 +14,9 @@ export default async function SettingsPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-[#1A1A2E]">Settings</h1>
+        <h1 className="text-2xl font-bold text-[#1A1A2E]">Company Details</h1>
         <p className="text-sm text-gray-500 mt-1">
-          Manage site-wide settings, contact details and email configuration.
+          Manage contact details, social links and site branding.
         </p>
       </div>
       <SettingsClient settings={settingsMap} />

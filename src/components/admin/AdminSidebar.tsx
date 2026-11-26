@@ -29,7 +29,7 @@ const NAV: NavItem[] = [
   { label: "Services",      href: "/admin/services",           icon: Wrench },
   { label: "Projects",      href: "/admin/projects",           icon: FolderOpen },
   { label: "Pages & SEO",   href: "/admin/pages",              icon: FileText },
-  { label: "Settings",      href: "/admin/settings",           icon: Settings },
+  { label: "Company Details", href: "/admin/settings",          icon: Settings },
 ];
 
 export default function AdminSidebar() {
