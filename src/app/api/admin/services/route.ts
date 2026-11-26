@@ -7,7 +7,9 @@ const schema = z.object({
   title: z.string().min(1).max(200),
   shortDesc: z.string().min(1),
   longDesc: z.string().optional(),
-  category: z.enum(["protective", "flooring"]),
+  icon: z.string().optional(),
+  tags: z.string().optional(),
+  category: z.enum(["protective", "industrial", "flooring", "refurbishment"]),
   orderIndex: z.number().default(0),
   isPublished: z.boolean().default(true),
 });
