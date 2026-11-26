@@ -36,27 +36,36 @@ const D_STEPS = {
   ],
 };
 
-const CONTACT_ITEMS = [
-  { Icon: Phone, label: "Call us",        value: "+91 78992 98718",          href: "tel:+917899298718" },
-  { Icon: Mail,  label: "Write to us",    value: "info@fortetechnologies.in", href: "mailto:info@fortetechnologies.in" },
-  { Icon: Clock, label: "Working hours",  value: "Mon – Sat, 9 am – 6 pm",   href: null },
-];
-
 export default async function ContactPage() {
   let heroContent: ContactHeroContent = {};
   let stepsContent: ContactStepsContent = {};
+  let phone = "+91 6364227475";
+  let email = "info@fortetechnologies.in";
 
   if (dbReady()) {
     try {
-      const rows = await prisma.pageSection.findMany({ where: { pageSlug: "contact" } });
-      for (const r of rows) {
+      const [sections, settings] = await Promise.all([
+        prisma.pageSection.findMany({ where: { pageSlug: "contact" } }),
+        prisma.siteSetting.findMany({ where: { key: { in: ["phone", "email"] } } }),
+      ]);
+      for (const r of sections) {
         if (r.sectionType === "contact-hero")  heroContent  = r.content as ContactHeroContent;
         if (r.sectionType === "contact-steps") stepsContent = r.content as ContactStepsContent;
+      }
+      for (const s of settings) {
+        if (s.key === "phone") phone = s.value;
+        if (s.key === "email") email = s.value;
       }
     } catch {
       // fall through to static defaults
     }
   }
+
+  const CONTACT_ITEMS = [
+    { Icon: Phone, label: "Call us",       value: phone, href: `tel:${phone.replace(/\s/g, "")}` },
+    { Icon: Mail,  label: "Write to us",   value: email, href: `mailto:${email}` },
+    { Icon: Clock, label: "Working hours", value: "Mon – Sat, 9 am – 6 pm", href: null },
+  ];
 
   const h = { ...D_HERO, ...heroContent };
   const stepsHeading = stepsContent.heading ?? D_STEPS.heading;
