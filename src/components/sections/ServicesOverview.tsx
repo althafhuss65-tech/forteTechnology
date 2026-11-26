@@ -58,6 +58,13 @@ export default async function ServicesOverview({ content }: { content?: Services
   }
 
   return (
+    <>
+    <style>{`
+      @media (min-width: 768px) {
+        .forte-svc-swiper .swiper-slide { height: auto !important; }
+        .forte-svc-swiper .swiper-slide > div { height: 100%; }
+      }
+    `}</style>
     <section className="background-repeat border-top border-color-light-gray position-relative overlap-height z-index-1" style={{ backgroundImage: "url('/crafto/images/demo-spa-salon-home-bg-01.jpg')" }}>
       <div className="container overlap-gap-section">
         <div className="row justify-content-center mb-2">
@@ -69,7 +76,7 @@ export default async function ServicesOverview({ content }: { content?: Services
         <div className="row mb-5 xs-mb-15px">
           <div className="col-12 position-relative">
             <div className="outside-box-right-40 sm-outside-box-right-0">
-              <div className="swiper" data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "autoplay": { "delay": 3000, "disableOnInteraction": false }, "pagination": false, "navigation": false, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "992": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
+              <div className="swiper forte-svc-swiper" data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "autoplay": { "delay": 3000, "disableOnInteraction": false }, "pagination": false, "navigation": false, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "992": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
                 <div className="swiper-wrapper pt-20px pb-20px">
                   {services.map(({ Icon, title, desc, img, num }) => (
                     <div key={num} className="swiper-slide">
@@ -106,5 +113,6 @@ export default async function ServicesOverview({ content }: { content?: Services
         </div>
       </div>
     </section>
+    </>
   );
 }
