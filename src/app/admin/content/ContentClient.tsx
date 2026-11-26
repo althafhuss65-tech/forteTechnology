@@ -146,7 +146,7 @@ function HeroForm({ data }: { data: unknown }) {
       <Field label="Badge Text"><input className={INP} value={f.badge} onChange={up("badge")} /></Field>
       <Field label="Headline"><textarea className={TA} rows={2} value={f.h1} onChange={up("h1")} /></Field>
       <Field label="Subtitle"><textarea className={TA} rows={3} value={f.subtitle} onChange={up("subtitle")} /></Field>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Button 1 Text"><input className={INP} value={f.cta1} onChange={up("cta1")} /></Field>
         <Field label="Button 2 Text"><input className={INP} value={f.cta2} onChange={up("cta2")} /></Field>
       </div>
@@ -190,13 +190,13 @@ function AboutForm({ data }: { data: unknown }) {
       <Field label="Eyebrow"><input className={INP} value={f.eyebrow} onChange={up("eyebrow")} /></Field>
       <Field label="Heading"><textarea className={TA} rows={2} value={f.heading} onChange={up("heading")} /></Field>
       <Field label="Body Text"><textarea className={TA} rows={4} value={f.body} onChange={up("body")} /></Field>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Phone"><input className={INP} value={f.phone} onChange={up("phone")} /></Field>
         <Field label="Year Founded"><input className={INP} value={f.yearFounded} onChange={up("yearFounded")} /></Field>
       </div>
       <div>
         <label className="block text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">Stats</label>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {f.stats.map((stat, i) => (
             <div key={i} className="bg-gray-50 rounded-lg p-3 space-y-2">
               <p className="text-xs font-bold text-gray-400">Stat {i + 1}</p>
@@ -547,7 +547,7 @@ function AboutMainForm({ data }: { data: unknown }) {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Years Value (e.g. 6+)"><input className={INP} value={f.yearsValue} onChange={up("yearsValue")} /></Field>
         <Field label="Years Label"><input className={INP} value={f.yearsLabel} onChange={up("yearsLabel")} /></Field>
       </div>
@@ -565,7 +565,7 @@ function AboutVisionMissionForm({ data }: { data: unknown }) {
     <form onSubmit={e => { e.preventDefault(); save(f); }} className="space-y-4">
       <Field label="Eyebrow"><input className={INP} value={f.eyebrow} onChange={up("eyebrow")} /></Field>
       <Field label="Heading"><textarea className={TA} rows={2} value={f.heading} onChange={up("heading")} /></Field>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-3">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wide">Vision</p>
           <Field label="Title"><input className={INP} value={f.visionTitle} onChange={up("visionTitle")} /></Field>
@@ -688,14 +688,15 @@ export default function ContentClient({
   const pageData = initialData[initialPage] ?? {};
 
   return (
-    <div className="flex gap-6 items-start">
-      <div className="w-48 flex-shrink-0 sticky top-6">
-        <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden">
+    <div className="flex flex-col gap-4 lg:flex-row lg:gap-6 lg:items-start">
+      {/* Section selector — vertical list on desktop, horizontal scroll on mobile */}
+      <div className="lg:w-48 lg:flex-shrink-0 lg:sticky lg:top-6">
+        <div className="bg-white rounded-xl border border-[#E5E7EB] shadow-sm overflow-hidden flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible">
           {sections.map((s) => (
             <button
               key={s.key}
               onClick={() => setActiveKey(s.key)}
-              className={`w-full text-left px-4 py-3 text-sm border-b border-[#E5E7EB] last:border-0 transition-colors ${
+              className={`flex-shrink-0 text-left px-4 py-3 text-sm border-r border-[#E5E7EB] last:border-0 lg:border-r-0 lg:border-b lg:last:border-0 transition-colors whitespace-nowrap lg:whitespace-normal lg:w-full ${
                 activeSection.key === s.key
                   ? "bg-[#354B35] text-white font-semibold"
                   : "text-gray-700 hover:bg-gray-50"
@@ -707,7 +708,7 @@ export default function ContentClient({
         </div>
       </div>
 
-      <div className="flex-1 bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-6">
+      <div className="flex-1 bg-white rounded-xl border border-[#E5E7EB] shadow-sm p-4 lg:p-6 min-w-0">
         <h2 className="text-2xl text-gray-300 mb-5 pb-4 border-b border-[#E5E7EB]">
           {activeSection.label}
         </h2>

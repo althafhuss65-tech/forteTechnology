@@ -90,7 +90,7 @@ export default function ProjectsClient({ initialProjects }: Props) {
           <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Description *</label>
           <textarea className={`${inputClass} resize-none`} rows={4} value={form.description} onChange={(e) => setForm((p) => ({ ...p, description: e.target.value }))} placeholder="Describe the project scope, materials and outcome..." />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Category</label>
             <input className={inputClass} value={form.category} onChange={(e) => setForm((p) => ({ ...p, category: e.target.value }))} placeholder="e.g. Protective Coating" />
